@@ -161,9 +161,9 @@ func build_level() -> void:
 
 	var eels = func():
 		spawn_eel(SPAWN_TOP_MIDDLE)
-		await Global.wait_for_sec(5.0)
+		await Global.wait_for_sec(4.0)
 		spawn_eel(SPAWN_TOP_MIDDLE)
-		await Global.wait_for_sec(5.0)
+		await Global.wait_for_sec(4.0)
 		spawn_eel(SPAWN_TOP_MIDDLE)
 
 	var spiders = func():
