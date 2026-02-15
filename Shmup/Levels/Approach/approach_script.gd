@@ -18,6 +18,12 @@ const SPAWN_RIGHT_MIDDLE = Vector2(180, 64.0)
 const SPAWN_RIGHT_HALF_BOTTOM = Vector2(180, 86.0)
 const SPAWN_RIGHT_BOTTOM = Vector2(180, 108.0)
 
+const SPAWN_BOTTOM_LEFT = Vector2(10.0, 148)
+const SPAWN_BOTTOM_HALF_LEFT = Vector2(45.0, 148)
+const SPAWN_BOTTOM_MIDDLE = Vector2(80, 148)
+const SPAWN_BOTTOM_HALF_RIGHT = Vector2(115, 148)
+const SPAWN_BOTTOM_RIGHT = Vector2(150.0, 148)
+
 const MISSILE: PackedScene = preload("res://Shmup/Actors/Missile/Missile.tscn")
 const SPIDER: PackedScene = preload("res://Shmup/Actors/Spider/Spider.tscn")
 const EEL: PackedScene = preload("res://Shmup/Actors/SpaceEel/SpaceEel.tscn")
@@ -143,3 +149,30 @@ func build_level() -> void:
 	spawn_spider(SPAWN_RIGHT_TOP)
 	await Global.wait_for_sec(1.0)
 	spawn_eel(SPAWN_TOP_MIDDLE)
+	await Global.wait_for_sec(2.0)
+
+	spawn_spider_line(SPAWN_LEFT_HALF_TOP, 5, 0.5, Vector2.RIGHT)
+	spawn_spider_line(SPAWN_RIGHT_HALF_BOTTOM, 5, 0.5, Vector2.LEFT)
+	await Global.wait_for_sec(4.0)
+
+	spawn_spider_line(SPAWN_TOP_HALF_LEFT, 5, 0.5, Vector2.DOWN)
+	spawn_spider_line(SPAWN_BOTTOM_HALF_RIGHT, 5, 0.5, Vector2.UP)
+	await Global.wait_for_sec(4.0)
+
+	var eels = func():
+		spawn_eel(SPAWN_TOP_MIDDLE)
+		await Global.wait_for_sec(5.0)
+		spawn_eel(SPAWN_TOP_MIDDLE)
+		await Global.wait_for_sec(5.0)
+		spawn_eel(SPAWN_TOP_MIDDLE)
+
+	var spiders = func():
+		await Global.wait_for_sec(4.0)
+		spawn_spider_line(SPAWN_TOP_HALF_LEFT, 3, 0.5, Vector2.DOWN)
+		spawn_spider_line(SPAWN_TOP_HALF_RIGHT, 3, 0.5, Vector2.DOWN)
+		await Global.wait_for_sec(4.0)
+		spawn_spider_line(SPAWN_TOP_HALF_LEFT, 3, 0.5, Vector2.DOWN)
+		spawn_spider_line(SPAWN_TOP_HALF_RIGHT, 3, 0.5, Vector2.DOWN)
+
+	eels.call()
+	spiders.call()
