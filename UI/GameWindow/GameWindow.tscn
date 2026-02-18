@@ -14,6 +14,7 @@ layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=572847619]
 handle_input_locally = false
+size = Vector2i(160, 128)
 render_target_update_mode = 4
 
 [node name="StatusBar" parent="." unique_id=1567623357 instance=ExtResource("2_idrcf")]

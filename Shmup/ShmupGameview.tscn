@@ -1,7 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctbjh0jr3c6lo"]
+[gd_scene format=3 uid="uid://ctbjh0jr3c6lo"]
 
 [ext_resource type="PackedScene" uid="uid://cnw8wodxx25p" path="res://Shmup/Levels/Approach/Approach.tscn" id="1_754ec"]
 
-[node name="ShmupGameview" type="SubViewport"]
+[node name="ShmupGameview" type="SubViewport" unique_id=910230657]
+size = Vector2i(160, 128)
 
-[node name="Approach" parent="." instance=ExtResource("1_754ec")]
+[node name="Approach" parent="." unique_id=1527008813 instance=ExtResource("1_754ec")]
