@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dun7nuo4r33ww" path="res://Underground/Actors/Player/player.gd" id="1_24od7"]
 [ext_resource type="Texture2D" uid="uid://me4u0ks2via2" path="res://Underground/Actors/Player/_art/greybox.png" id="2_1pkev"]
+[ext_resource type="PackedScene" uid="uid://56ycqed62x8x" path="res://Common/Actors/Components/Director/InputDirector/InputDirector.tscn" id="3_4mjj5"]
+[ext_resource type="PackedScene" uid="uid://do5jm21v7vbpm" path="res://Common/Actors/Components/StateMachine/StateMachine.tscn" id="4_r56jp"]
+[ext_resource type="PackedScene" uid="uid://3jni2nfy88cd" path="res://Underground/Actors/Player/States/Stand/Stand.tscn" id="5_r56jp"]
+[ext_resource type="PackedScene" uid="uid://bsf23tjhigrr5" path="res://Underground/Actors/Player/States/Walk/Walk.tscn" id="6_yw3ku"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mjj5"]
 radius = 6.0
@@ -113,3 +117,15 @@ shape = SubResource("CapsuleShape2D_4mjj5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=201769918]
 libraries/ = SubResource("AnimationLibrary_r5ta7")
+
+[node name="InputDirector" parent="." unique_id=1045030086 instance=ExtResource("3_4mjj5")]
+
+[node name="StateMachine" parent="." unique_id=45587627 node_paths=PackedStringArray("director", "starting_state") instance=ExtResource("4_r56jp")]
+director = NodePath("../InputDirector")
+starting_state = NodePath("Stand")
+
+[node name="Stand" parent="StateMachine" unique_id=862826012 node_paths=PackedStringArray("walk_state") instance=ExtResource("5_r56jp")]
+walk_state = NodePath("../Walk")
+
+[node name="Walk" parent="StateMachine" unique_id=449862307 node_paths=PackedStringArray("stand_state") instance=ExtResource("6_yw3ku")]
+stand_state = NodePath("../Stand")
