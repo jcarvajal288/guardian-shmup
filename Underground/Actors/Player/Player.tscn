@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://3jni2nfy88cd" path="res://Underground/Actors/Player/States/Stand/Stand.tscn" id="5_r56jp"]
 [ext_resource type="PackedScene" uid="uid://bsf23tjhigrr5" path="res://Underground/Actors/Player/States/Walk/Walk.tscn" id="6_yw3ku"]
 [ext_resource type="PackedScene" uid="uid://ly7yjrqxh4j5" path="res://Underground/Actors/Player/States/Crouch/Crouch.tscn" id="7_1uxci"]
+[ext_resource type="PackedScene" uid="uid://ba245wxm3s1ys" path="res://Underground/Actors/Player/States/Jump/Jump.tscn" id="8_t552t"]
+[ext_resource type="PackedScene" uid="uid://c1lbyhmlkotew" path="res://Underground/Actors/Player/States/Fall/Fall.tscn" id="9_r5ta7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mjj5"]
 radius = 6.0
@@ -141,13 +143,21 @@ libraries/ = SubResource("AnimationLibrary_r5ta7")
 director = NodePath("../InputDirector")
 starting_state = NodePath("Stand")
 
-[node name="Stand" parent="StateMachine" unique_id=862826012 node_paths=PackedStringArray("walk_state", "crouch_state") instance=ExtResource("5_r56jp")]
+[node name="Stand" parent="StateMachine" unique_id=862826012 node_paths=PackedStringArray("walk_state", "crouch_state", "jump_state") instance=ExtResource("5_r56jp")]
 walk_state = NodePath("../Walk")
 crouch_state = NodePath("../Crouch")
+jump_state = NodePath("../Jump")
 
-[node name="Walk" parent="StateMachine" unique_id=449862307 node_paths=PackedStringArray("stand_state", "crouch_state") instance=ExtResource("6_yw3ku")]
+[node name="Walk" parent="StateMachine" unique_id=449862307 node_paths=PackedStringArray("stand_state", "crouch_state", "jump_state") instance=ExtResource("6_yw3ku")]
 stand_state = NodePath("../Stand")
 crouch_state = NodePath("../Crouch")
+jump_state = NodePath("../Jump")
 
 [node name="Crouch" parent="StateMachine" unique_id=1404390242 node_paths=PackedStringArray("stand_state") instance=ExtResource("7_1uxci")]
+stand_state = NodePath("../Stand")
+
+[node name="Jump" parent="StateMachine" unique_id=140536561 node_paths=PackedStringArray("fall_state") instance=ExtResource("8_t552t")]
+fall_state = NodePath("../Fall")
+
+[node name="Fall" parent="StateMachine" unique_id=867541371 node_paths=PackedStringArray("stand_state") instance=ExtResource("9_r5ta7")]
 stand_state = NodePath("../Stand")
