@@ -10,6 +10,10 @@ func get_speed() -> float:
 	return GameStats.PLAYER_WALK_SPEED
 
 
+func flip_sprite(is_flipped: bool) -> void:
+	$Sprite2D.flip_h = is_flipped
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	$StateMachine.process_input(event)
 
