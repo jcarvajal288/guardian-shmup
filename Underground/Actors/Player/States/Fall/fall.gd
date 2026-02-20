@@ -8,5 +8,7 @@ func process_physics(delta: float) -> State:
 	subject.velocity.y += gravity * delta
 	if subject.is_on_floor():
 		return stand_state
+	subject.velocity.x = director.movement_vector.x * GameStats.PLAYER_WALK_SPEED
+	subject.flip_sprite(director.movement_vector.x > 0)
 	subject.move_and_slide()
 	return null
