@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ly7yjrqxh4j5"]
+
+[ext_resource type="Script" uid="uid://y2hdntcki12e" path="res://Underground/Actors/Player/States/Crouch/crouch.gd" id="1_wrmg7"]
+
+[node name="Crouch" type="Node" unique_id=1404390242]
+script = ExtResource("1_wrmg7")
+animation_name = "crouching"
+metadata/_custom_type_script = "uid://bvhh7tae6gx71"
