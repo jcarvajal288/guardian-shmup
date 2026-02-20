@@ -61,6 +61,21 @@ tracks/0/keys = {
 "values": [5]
 }
 
+[sub_resource type="Animation" id="Animation_r5ta7"]
+resource_name = "jumping"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
 [sub_resource type="Animation" id="Animation_dkju0"]
 resource_name = "standing"
 length = 0.10001
@@ -101,6 +116,7 @@ _data = {
 &"RESET": SubResource("Animation_r56jp"),
 &"crouching": SubResource("Animation_yw3ku"),
 &"falling": SubResource("Animation_1uxci"),
+&"jumping": SubResource("Animation_r5ta7"),
 &"standing": SubResource("Animation_dkju0"),
 &"walking": SubResource("Animation_t552t")
 }
@@ -110,7 +126,7 @@ script = ExtResource("1_24od7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1509161913]
 texture = ExtResource("2_1pkev")
-hframes = 6
+hframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=584999777]
 position = Vector2(0, 1)
