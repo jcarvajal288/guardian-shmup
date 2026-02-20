@@ -148,10 +148,11 @@ walk_state = NodePath("../Walk")
 crouch_state = NodePath("../Crouch")
 jump_state = NodePath("../Jump")
 
-[node name="Walk" parent="StateMachine" unique_id=449862307 node_paths=PackedStringArray("stand_state", "crouch_state", "jump_state") instance=ExtResource("6_yw3ku")]
+[node name="Walk" parent="StateMachine" unique_id=449862307 node_paths=PackedStringArray("stand_state", "crouch_state", "jump_state", "fall_state") instance=ExtResource("6_yw3ku")]
 stand_state = NodePath("../Stand")
 crouch_state = NodePath("../Crouch")
 jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
 
 [node name="Crouch" parent="StateMachine" unique_id=1404390242 node_paths=PackedStringArray("stand_state") instance=ExtResource("7_1uxci")]
 stand_state = NodePath("../Stand")
