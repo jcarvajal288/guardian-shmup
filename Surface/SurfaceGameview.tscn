@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn1mwoj2saqvm"]
+[gd_scene format=3 uid="uid://dn1mwoj2saqvm"]
 
-[ext_resource type="PackedScene" uid="uid://dahyonuug207n" path="res://Surface/Components/SurfaceCamera/SurfaceCamera.tscn" id="1_mowan"]
+[ext_resource type="PackedScene" uid="uid://dahyonuug207n" path="res://Common/Actors/Components/FollowPlayerCamera/FollowPlayerCamera.tscn" id="1_mowan"]
 [ext_resource type="PackedScene" uid="uid://dpxthe7r4afam" path="res://Surface/Levels/TestLevel/TestLevel.tscn" id="2_pu6hu"]
 
 [node name="SurfaceGameview" type="SubViewport"]

@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	$StateMachine.init(self)
+	Global.player = self
 
 
 func get_speed() -> float:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dahyonuug207n"]
+
+[ext_resource type="Script" uid="uid://c6ryf3b4yq8x0" path="res://Common/Actors/Components/FollowPlayerCamera/follow_player_camera.gd" id="1_kj2r6"]
+
+[node name="SurfaceCamera" type="Camera2D"]
+script = ExtResource("1_kj2r6")
