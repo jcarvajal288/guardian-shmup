@@ -1,12 +1,9 @@
-extends Node2D
-
-const MAP_TILE_SIZE = 8
+extends Room
 
 
-func _ready() -> void:
-	var room_rect_size = $TileMapLayer.get_used_rect().size
-	var pixel_room_size = Vector2(
-		room_rect_size.x * MAP_TILE_SIZE,
-		room_rect_size.y * MAP_TILE_SIZE,
-	)
-	Global.bind_camera.emit(Rect2(global_position, pixel_room_size))
+func get_entry_point(entry_id: String) -> Vector2:
+	if entry_id == "WesternExit":
+		return $WesternExit/PlayerEntryPoint.global_position
+	else:
+		assert(false, "Invalid entry_id for BigRoom: %s" % entry_id)
+		return Vector2.ZERO

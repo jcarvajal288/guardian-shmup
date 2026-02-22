@@ -1,10 +1,11 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
 	$StateMachine.init(self)
 	Global.player = self
+	z_index = Global.RenderOrder.PLAYER
 
 
 func get_speed() -> float:

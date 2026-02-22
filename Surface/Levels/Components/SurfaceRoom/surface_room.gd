@@ -1,4 +1,4 @@
-class_name Room extends Node2D
+class_name SurfaceRoom extends Node2D
 
 const MAP_TILE_SIZE = 16
 

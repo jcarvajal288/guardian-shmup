@@ -6,7 +6,6 @@ func _ready() -> void:
 
 
 func bind_to_rect(rect: Rect2) -> void:
-	print("binding camera")
 	limit_top = int(rect.position.y)
 	limit_bottom = int(rect.end.y)
 	limit_left = int(rect.position.x)
