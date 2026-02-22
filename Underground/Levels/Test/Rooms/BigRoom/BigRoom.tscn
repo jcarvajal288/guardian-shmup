@@ -16,7 +16,10 @@ position = Vector2(-8, 168)
 next_room_path = "res://Underground/Levels/Test/Rooms/WestRoom/WestRoom.tscn"
 entry_id = "EasternExit"
 
+[node name="CollisionShape2D" parent="WesternExit" index="0" unique_id=665544043]
+position = Vector2(-6, 4)
+
 [node name="PlayerEntryPoint" parent="WesternExit" index="1" unique_id=1944973879]
-position = Vector2(19, 0)
+position = Vector2(10, 4)
 
 [editable path="WesternExit"]
