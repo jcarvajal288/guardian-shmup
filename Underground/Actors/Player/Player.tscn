@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ly7yjrqxh4j5" path="res://Underground/Actors/Player/States/Crouch/Crouch.tscn" id="7_1uxci"]
 [ext_resource type="PackedScene" uid="uid://ba245wxm3s1ys" path="res://Underground/Actors/Player/States/Jump/Jump.tscn" id="8_t552t"]
 [ext_resource type="PackedScene" uid="uid://c1lbyhmlkotew" path="res://Underground/Actors/Player/States/Fall/Fall.tscn" id="9_r5ta7"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="10_r5ta7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mjj5"]
 radius = 6.0
@@ -163,3 +164,5 @@ fall_state = NodePath("../Fall")
 
 [node name="Fall" parent="StateMachine" unique_id=867541371 node_paths=PackedStringArray("stand_state") instance=ExtResource("9_r5ta7")]
 stand_state = NodePath("../Stand")
+
+[node name="Health" parent="." unique_id=508258580 instance=ExtResource("10_r5ta7")]

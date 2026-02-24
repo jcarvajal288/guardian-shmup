@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bj1ne0a2ecbtp" path="res://Underground/Levels/Test/Rooms/LongRoom/long_room.gd" id="1_a0iw6"]
 [ext_resource type="TileSet" uid="uid://evwkhc4rcvjg" path="res://Underground/Levels/Test/_art/test_tileset.tres" id="2_7aqu2"]
 [ext_resource type="PackedScene" uid="uid://cj4t1wapq73pw" path="res://Common/Levels/RoomTransition/RoomTransition.tscn" id="3_fx3jp"]
+[ext_resource type="PackedScene" uid="uid://b0pj4cwgkd5k" path="res://Underground/Environment/DamageArea/DamageArea.tscn" id="4_7aqu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx3jp"]
+size = Vector2(584, 21)
 
 [node name="LongRoom" type="Node2D" unique_id=1824080336]
 script = ExtResource("1_a0iw6")
@@ -27,4 +31,13 @@ position = Vector2(-2, 0)
 [node name="PlayerEntryPoint" parent="WesternExit" index="1" unique_id=1944973879]
 position = Vector2(16, 0)
 
+[node name="DamageArea" parent="." unique_id=1906044125 instance=ExtResource("4_7aqu2")]
+damage = 0.25
+tick_rate = 0.25
+
+[node name="CollisionShape2D" parent="DamageArea" index="0" unique_id=2110584546]
+position = Vector2(324, 115.5)
+shape = SubResource("RectangleShape2D_fx3jp")
+
 [editable path="WesternExit"]
+[editable path="DamageArea"]

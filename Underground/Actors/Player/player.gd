@@ -6,10 +6,17 @@ func _ready() -> void:
 	$StateMachine.init(self)
 	Global.player = self
 	z_index = Global.RenderOrder.PLAYER
+	$Health.set_health(GameStats.PLAYER_STARTING_HEALTH)
+	Global.player_health_changed.emit($Health.current_health, $Health.max_health)
 
 
 func get_speed() -> float:
 	return GameStats.PLAYER_WALK_SPEED
+
+
+func take_damage(damage: float) -> void:
+	$Health.take_damage(damage)
+	Global.player_health_changed.emit($Health.current_health, $Health.max_health)
 
 
 func flip_sprite(is_flipped: bool) -> void:
