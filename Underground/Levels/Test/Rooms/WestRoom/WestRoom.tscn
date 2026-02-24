@@ -17,7 +17,7 @@ next_room_path = "res://Underground/Levels/Test/Rooms/BigRoom/BigRoom.tscn"
 entry_id = "WesternExit"
 
 [node name="CollisionShape2D" parent="EasternExit" index="0" unique_id=665544043]
-position = Vector2(6, 4)
+position = Vector2(8, 4)
 
 [node name="PlayerEntryPoint" parent="EasternExit" index="1" unique_id=1944973879]
 position = Vector2(-10, 4)
