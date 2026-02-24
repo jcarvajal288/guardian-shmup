@@ -6,3 +6,5 @@
 script = ExtResource("1_alv62")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110584546]
+
+[node name="Timer" type="Timer" parent="." unique_id=940546292]
