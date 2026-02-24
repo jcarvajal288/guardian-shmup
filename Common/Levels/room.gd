@@ -4,7 +4,7 @@ class_name Room extends Node2D
 const MAP_TILE_SIZE = 8
 
 func _ready() -> void:
-	var room_rect = $TileMapLayer.get_used_rect()
+	var room_rect = $TileMapBackground.get_used_rect()
 	var pos = room_rect.position * MAP_TILE_SIZE
 	var size = room_rect.size * MAP_TILE_SIZE
 
