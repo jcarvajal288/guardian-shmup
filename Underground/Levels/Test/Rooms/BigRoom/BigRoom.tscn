@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://idip3urqftmo" path="res://Underground/Levels/Test/Rooms/BigRoom/big_room.gd" id="1_27jd7"]
 [ext_resource type="TileSet" uid="uid://evwkhc4rcvjg" path="res://Underground/Levels/Test/_art/test_tileset.tres" id="1_yft85"]
 [ext_resource type="PackedScene" uid="uid://cj4t1wapq73pw" path="res://Common/Levels/RoomTransition/RoomTransition.tscn" id="3_o2dop"]
+[ext_resource type="PackedScene" uid="uid://glccy1ph24de" path="res://Underground/Actors/Anemone/Anemone.tscn" id="4_hj1cw"]
 
 [node name="BigRoom" type="Node2D" unique_id=1131515927]
 script = ExtResource("1_27jd7")
@@ -31,6 +32,9 @@ position = Vector2(328, 172)
 
 [node name="PlayerEntryPoint" parent="EasternExit" index="1" unique_id=1944973879]
 position = Vector2(310, 172)
+
+[node name="Anemone" parent="." unique_id=262284368 instance=ExtResource("4_hj1cw")]
+position = Vector2(116, 101)
 
 [editable path="WesternExit"]
 [editable path="EasternExit"]

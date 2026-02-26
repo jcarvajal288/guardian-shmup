@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://glccy1ph24de"]
+
+[ext_resource type="Texture2D" uid="uid://b0od3vlwrhmby" path="res://Underground/Actors/Anemone/_art/anemone.png" id="1_6av5c"]
+[ext_resource type="Script" uid="uid://da4h1i4x4xb8f" path="res://Underground/Actors/Anemone/anemone.gd" id="1_r0swm"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Common/Actors/Components/Hurtbox/Hurtbox.tscn" id="3_2pgtu"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="4_euknt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7344y"]
+atlas = ExtResource("1_6av5c")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jic0b"]
+atlas = ExtResource("1_6av5c")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0swm"]
+atlas = ExtResource("1_6av5c")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pgtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7344y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jic0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0swm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euknt"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tewh"]
+radius = 4.0
+
+[node name="Anemone" type="CharacterBody2D" unique_id=262284368]
+script = ExtResource("1_r0swm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1755073267]
+sprite_frames = SubResource("SpriteFrames_2pgtu")
+autoplay = "default"
+frame = 1
+frame_progress = 0.9623445
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=968881626]
+shape = SubResource("CircleShape2D_euknt")
+
+[node name="Hurtbox" parent="." unique_id=867860352 instance=ExtResource("3_2pgtu")]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=719271502]
+shape = SubResource("CircleShape2D_3tewh")
+
+[node name="Health" parent="." unique_id=977909917 instance=ExtResource("4_euknt")]
+max_health = 3.0
+
+[node name="RayCastPivot" type="Marker2D" parent="." unique_id=150382682]
+
+[node name="RayCastLeft" type="RayCast2D" parent="RayCastPivot" unique_id=114806645]
+position = Vector2(-4, 0)
+target_position = Vector2(0, 8)
+
+[node name="RayCastRight" type="RayCast2D" parent="RayCastPivot" unique_id=663213974]
+position = Vector2(4, 0)
+target_position = Vector2(0, 8)
+
+[editable path="Hurtbox"]

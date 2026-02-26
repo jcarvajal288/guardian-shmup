@@ -18,3 +18,8 @@ const SPIDER_SPEED = 30
 
 const BIG_SPIDER_SPEED = 40
 const BIG_SPIDER_HEALTH = 30
+
+
+## Underground
+
+const ANEMONE_SPEED = 25
