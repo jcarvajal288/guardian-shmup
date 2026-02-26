@@ -35,6 +35,7 @@ position = Vector2(310, 172)
 
 [node name="Anemone" parent="." unique_id=262284368 instance=ExtResource("4_hj1cw")]
 position = Vector2(116, 101)
+move_direction = -1
 
 [editable path="WesternExit"]
 [editable path="EasternExit"]

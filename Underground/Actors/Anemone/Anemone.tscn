@@ -70,4 +70,7 @@ target_position = Vector2(0, 8)
 position = Vector2(4, 0)
 target_position = Vector2(0, 8)
 
+[node name="RayCastMove" type="RayCast2D" parent="RayCastPivot" unique_id=2096181745]
+target_position = Vector2(0, 5)
+
 [editable path="Hurtbox"]
