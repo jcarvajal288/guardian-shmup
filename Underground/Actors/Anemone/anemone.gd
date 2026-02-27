@@ -15,6 +15,10 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if ray_move.is_colliding():
+		var new_rotation = deg_to_rad(90 * move_direction)
+		$RayCastPivot.rotate(new_rotation)
+		velocity = velocity.rotated(new_rotation)
 	if ray_left.is_colliding() or ray_right.is_colliding():
 		var direction = (ray_move.to_global(ray_move.target_position) - ray_move.global_position).normalized()
 		velocity = direction * GameStats.ANEMONE_SPEED
