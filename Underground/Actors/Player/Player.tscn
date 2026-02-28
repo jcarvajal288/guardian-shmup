@@ -168,10 +168,12 @@ stand_state = NodePath("../Stand")
 
 [node name="Health" parent="." unique_id=508258580 instance=ExtResource("10_r5ta7")]
 
-[node name="Shooter" type="Marker2D" parent="." unique_id=498509461 node_paths=PackedStringArray("director")]
-position = Vector2(-8, -1)
+[node name="Shooter" type="Node2D" parent="." unique_id=1031251106 node_paths=PackedStringArray("director")]
 script = ExtResource("11_dfg4w")
 director = NodePath("../InputDirector")
+
+[node name="ShotSpawnPoint" type="Marker2D" parent="Shooter" unique_id=498509461]
+position = Vector2(-8, -1)
 
 [node name="Timer" type="Timer" parent="Shooter" unique_id=1663037659]
 one_shot = true
