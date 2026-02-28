@@ -11,6 +11,7 @@ func _process(_delta: float) -> void:
 	if director.action_attack and $Timer.time_left <= 0:
 		var shot = SHOT_1.instantiate()
 		shot.global_position = global_position
+		shot.direction = Vector2.LEFT
 		Global.add_node_to_level.emit(shot)
 		Sounds.play_sound.emit(Sounds.SoundEffect.PLAYER_SHOT, global_position)
 		$Timer.start(GameStats.PLAYER_FIRE_RATE)
