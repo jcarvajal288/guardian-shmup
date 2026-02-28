@@ -54,6 +54,7 @@ func shoot() -> void:
 		Global.add_node_to_level.emit(shot)
 		Sounds.play_sound.emit(Sounds.SoundEffect.PLAYER_SHOT, global_position)
 		can_shoot = false
+		$ShotTimer.start(GameStats.PLAYER_FIRE_RATE)
 
 
 func animate() -> void:

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ba245wxm3s1ys" path="res://Underground/Actors/Player/States/Jump/Jump.tscn" id="8_t552t"]
 [ext_resource type="PackedScene" uid="uid://c1lbyhmlkotew" path="res://Underground/Actors/Player/States/Fall/Fall.tscn" id="9_r5ta7"]
 [ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="10_r5ta7"]
+[ext_resource type="Script" uid="uid://bvngtos72bldm" path="res://Underground/Actors/Player/shooter.gd" id="11_dfg4w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mjj5"]
 radius = 6.0
@@ -166,3 +167,11 @@ fall_state = NodePath("../Fall")
 stand_state = NodePath("../Stand")
 
 [node name="Health" parent="." unique_id=508258580 instance=ExtResource("10_r5ta7")]
+
+[node name="Shooter" type="Marker2D" parent="." unique_id=498509461 node_paths=PackedStringArray("director")]
+position = Vector2(-8, -1)
+script = ExtResource("11_dfg4w")
+director = NodePath("../InputDirector")
+
+[node name="Timer" type="Timer" parent="Shooter" unique_id=1663037659]
+one_shot = true

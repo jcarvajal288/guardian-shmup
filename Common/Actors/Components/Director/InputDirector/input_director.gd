@@ -10,3 +10,4 @@ func bind_8_way(input_direction: Vector2) -> Vector2:
 func _physics_process(_delta: float) -> void:
 	movement_vector = bind_8_way(Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down"))
 	action_jump = Input.is_action_pressed("jump")
+	action_attack = Input.is_action_pressed("shoot")
