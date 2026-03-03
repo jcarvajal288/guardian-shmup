@@ -1,6 +1,5 @@
 class_name Player extends CharacterBody2D
 
-@onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
 	$StateMachine.init(self)
@@ -20,7 +19,8 @@ func take_damage(damage: float) -> void:
 
 
 func flip_sprite(is_flipped: bool) -> void:
-	$Sprite2D.flip_h = is_flipped
+	$UpperSprite.flip_h = is_flipped
+	$LegSprite.flip_h = is_flipped
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,3 +33,13 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	$StateMachine.process_frame(delta)
+
+
+func play_animation(animation_name: String) -> void:
+	$UpperAnimationPlayer.play("RESET")
+	$UpperAnimationPlayer.advance(0)
+	$UpperAnimationPlayer.play(animation_name)
+
+	$LegAnimationPlayer.play("RESET")
+	$LegAnimationPlayer.advance(0)
+	$LegAnimationPlayer.play(animation_name)

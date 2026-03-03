@@ -7,9 +7,7 @@ var subject: CharacterBody2D
 var signal_state_change
 
 func enter() -> void:
-	subject.animation_player.play("RESET")
-	subject.animation_player.advance(0)
-	subject.animation_player.play(animation_name)
+	subject.play_animation(animation_name)
 
 
 func exit() -> void:
