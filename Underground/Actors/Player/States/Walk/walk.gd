@@ -17,7 +17,6 @@ func process_physics(_delta: float) -> State:
 	elif not subject.is_on_floor():
 		return fall_state
 	movement.y = 0
-	subject.flip_sprite(movement.x > 0)
 	subject.velocity = movement
 	subject.move_and_slide()
 	return null

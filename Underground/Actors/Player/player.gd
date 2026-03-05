@@ -33,13 +33,29 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	$StateMachine.process_frame(delta)
+	manage_upper_sprite()
+	flip_sprite($InputDirector.movement_vector.x > 0)
 
 
 func play_animation(animation_name: String) -> void:
-	$UpperAnimationPlayer.play("RESET")
-	$UpperAnimationPlayer.advance(0)
-	$UpperAnimationPlayer.play(animation_name)
-
 	$LegAnimationPlayer.play("RESET")
 	$LegAnimationPlayer.advance(0)
 	$LegAnimationPlayer.play(animation_name)
+
+
+func manage_upper_sprite() -> void:
+	var move_vector = $InputDirector.movement_vector
+	$UpperAnimationPlayer.play("RESET")
+	$UpperAnimationPlayer.advance(0)
+	if is_on_floor() and move_vector.y > 0.0:
+		$UpperAnimationPlayer.play("crouching")
+	elif move_vector.y < 0.0 and move_vector.x == 0.0:
+		$UpperAnimationPlayer.play("point_up")
+	elif move_vector.y < 0.0 and move_vector.x != 0.0:
+		$UpperAnimationPlayer.play("point_up_diagonal")
+	elif move_vector.y > 0.0 and move_vector.x != 0.0:
+		$UpperAnimationPlayer.play("point_down_diagonal")
+	elif move_vector.y > 0.0 and move_vector.x == 0.0:
+		$UpperAnimationPlayer.play("point_down")
+	else:
+		$UpperAnimationPlayer.play("point_side")

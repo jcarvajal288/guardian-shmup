@@ -82,6 +82,86 @@ tracks/0/keys = {
 "values": [6]
 }
 
+[sub_resource type="Animation" id="Animation_y2c3v"]
+resource_name = "point_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpperSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_u1xde"]
+resource_name = "point_down_diagonal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpperSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_tskc6"]
+resource_name = "point_side"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpperSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_v8nrx"]
+resource_name = "point_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpperSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_6wljg"]
+resource_name = "point_up_diagonal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpperSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
 [sub_resource type="Animation" id="Animation_u412b"]
 resource_name = "standing"
 length = 0.10001
@@ -124,6 +204,11 @@ _data = {
 &"crouching": SubResource("Animation_ym8by"),
 &"falling": SubResource("Animation_8gbps"),
 &"jumping": SubResource("Animation_yikda"),
+&"point_down": SubResource("Animation_y2c3v"),
+&"point_down_diagonal": SubResource("Animation_u1xde"),
+&"point_side": SubResource("Animation_tskc6"),
+&"point_up": SubResource("Animation_v8nrx"),
+&"point_up_diagonal": SubResource("Animation_6wljg"),
 &"standing": SubResource("Animation_u412b"),
 &"walking": SubResource("Animation_a00cn")
 }
@@ -246,7 +331,7 @@ script = ExtResource("1_24od7")
 
 [node name="UpperSprite" type="Sprite2D" parent="." unique_id=1588467252]
 texture = ExtResource("2_d2wkd")
-hframes = 7
+hframes = 11
 
 [node name="UpperAnimationPlayer" type="AnimationPlayer" parent="." unique_id=745393164]
 libraries/ = SubResource("AnimationLibrary_yikda")
