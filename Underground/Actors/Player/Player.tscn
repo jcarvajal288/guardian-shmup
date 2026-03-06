@@ -381,8 +381,35 @@ stand_state = NodePath("../Stand")
 script = ExtResource("11_dfg4w")
 director = NodePath("../InputDirector")
 
-[node name="ShotSpawnPoint" type="Marker2D" parent="Shooter" unique_id=498509461]
+[node name="ShotSpawnPointLeft" type="Marker2D" parent="Shooter" unique_id=498509461]
 position = Vector2(-8, -1)
+
+[node name="ShotSpawnPointUpLeft" type="Marker2D" parent="Shooter" unique_id=954214469]
+position = Vector2(-6, -9)
+
+[node name="ShotSpawnPointUp" type="Marker2D" parent="Shooter" unique_id=1817296690]
+position = Vector2(0, -13)
+
+[node name="ShotSpawnPointUpRight" type="Marker2D" parent="Shooter" unique_id=1024927138]
+position = Vector2(6, -9)
+
+[node name="ShotSpawnPointRight" type="Marker2D" parent="Shooter" unique_id=1249372395]
+position = Vector2(8, -1)
+
+[node name="ShotSpawnPointDownLeft" type="Marker2D" parent="Shooter" unique_id=894662204]
+position = Vector2(-6, 2)
+
+[node name="ShotSpawnPointDownRight" type="Marker2D" parent="Shooter" unique_id=1705376683]
+position = Vector2(6, 2)
+
+[node name="ShotSpawnPointDown" type="Marker2D" parent="Shooter" unique_id=875163131]
+position = Vector2(0, 8)
+
+[node name="ShotSpawnPointCrouchLeft" type="Marker2D" parent="Shooter" unique_id=826404982]
+position = Vector2(-8, 4)
+
+[node name="ShotSpawnPointCrouchRight" type="Marker2D" parent="Shooter" unique_id=1356461906]
+position = Vector2(8, 4)
 
 [node name="Timer" type="Timer" parent="Shooter" unique_id=1663037659]
 one_shot = true

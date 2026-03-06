@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+var facing = Vector2.LEFT
+
 
 func _ready() -> void:
 	$StateMachine.init(self)
@@ -33,8 +35,13 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	$StateMachine.process_frame(delta)
+	if $InputDirector.movement_vector.x < 0:
+		facing = Vector2.LEFT
+	elif $InputDirector.movement_vector.x > 0: 
+		facing = Vector2.RIGHT
 	manage_upper_sprite()
-	flip_sprite($InputDirector.movement_vector.x > 0)
+	manage_shooter()
+	flip_sprite(facing == Vector2.RIGHT)
 
 
 func play_animation(animation_name: String) -> void:
@@ -59,3 +66,36 @@ func manage_upper_sprite() -> void:
 		$UpperAnimationPlayer.play("point_down")
 	else:
 		$UpperAnimationPlayer.play("point_side")
+	
+
+func manage_shooter() -> void:
+	var mv = $InputDirector.movement_vector
+	if is_on_floor() and mv.y > 0:
+		if facing == Vector2.LEFT:
+			$Shooter.shot_direction = "CrouchLeft"
+		else:
+			$Shooter.shot_direction = "CrouchRight"
+	elif mv.x < 0: 
+		if mv.y < 0:
+			$Shooter.shot_direction = "UpLeft"
+		elif mv.y > 0:
+			$Shooter.shot_direction = "DownLeft"
+		else:
+			$Shooter.shot_direction = "Left"
+	elif mv.x > 0:
+		if mv.y < 0:
+			$Shooter.shot_direction = "UpRight"
+		elif mv.y > 0:
+			$Shooter.shot_direction = "DownRight"
+		else:
+			$Shooter.shot_direction = "Right"
+	elif mv.y < 0:
+		$Shooter.shot_direction = "Up"
+	elif mv.y > 0:
+		$Shooter.shot_direction = "Down"
+	elif mv == Vector2.ZERO:
+		if facing == Vector2.LEFT:
+			$Shooter.shot_direction = "Left"
+		else:
+			$Shooter.shot_direction = "Right"
+
