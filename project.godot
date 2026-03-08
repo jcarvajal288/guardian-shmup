@@ -22,12 +22,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://global.gd"
-MovementPatterns="*res://Components/MovementPatterns/movement_patterns.gd"
 BulletPatterns="*res://Bullets/BulletPatterns/bullet_patterns.gd"
 Effects="*res://Effects/effects.gd"
-GameStats="*res://Common/Actors/game_stats.gd"
 Sounds="*res://Assets/Sounds/sounds.gd"
 Bullets="*res://Bullets/bullets.gd"
+MovementPatterns="*uid://cqejklw6m7o85"
+GameStats="*uid://cnufoqky42pnb"
 
 [display]
 
