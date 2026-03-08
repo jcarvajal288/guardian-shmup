@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://3jni2nfy88cd"]
-
-[ext_resource type="Script" uid="uid://dgldb1mqvn4f6" path="res://Underground/Actors/Player/States/Stand/stand.gd" id="1_iv1l3"]
-
-[node name="Stand" type="Node" unique_id=862826012]
-script = ExtResource("1_iv1l3")
-animation_name = "standing"
-metadata/_custom_type_script = "uid://bvhh7tae6gx71"

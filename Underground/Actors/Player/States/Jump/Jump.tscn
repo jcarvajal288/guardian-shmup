@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://ba245wxm3s1ys"]
-
-[ext_resource type="Script" uid="uid://cclu5g7u16nmo" path="res://Underground/Actors/Player/States/Jump/jump.gd" id="1_jttla"]
-
-[node name="Jump" type="Node" unique_id=140536561]
-script = ExtResource("1_jttla")
-animation_name = "jumping"
-metadata/_custom_type_script = "uid://bvhh7tae6gx71"

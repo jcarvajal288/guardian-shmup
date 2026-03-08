@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bsf23tjhigrr5"]
-
-[ext_resource type="Script" uid="uid://byya7dech4wke" path="res://Underground/Actors/Player/States/Walk/walk.gd" id="1_gmsvr"]
-
-[node name="Walk" type="Node" unique_id=449862307]
-script = ExtResource("1_gmsvr")
-animation_name = "walking"
-metadata/_custom_type_script = "uid://bvhh7tae6gx71"

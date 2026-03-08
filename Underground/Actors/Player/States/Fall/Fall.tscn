@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://c1lbyhmlkotew"]
-
-[ext_resource type="Script" uid="uid://dtb86vdivr16t" path="res://Underground/Actors/Player/States/Fall/fall.gd" id="1_lm7vk"]
-
-[node name="Fall" type="Node" unique_id=867541371]
-script = ExtResource("1_lm7vk")
-animation_name = "falling"
-metadata/_custom_type_script = "uid://bvhh7tae6gx71"
