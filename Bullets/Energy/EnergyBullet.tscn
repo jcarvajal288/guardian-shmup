@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://covjpfvtagfak"]
+
+[ext_resource type="Script" uid="uid://bipxyudr0tnpn" path="res://Bullets/Energy/energy_bullet.gd" id="1_lhkxr"]
+[ext_resource type="Texture2D" uid="uid://ur18v88x4shb" path="res://Bullets/Energy/_art/energy_bullet.png" id="2_y7hqq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km4hy"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vp8u"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bbkd"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsma6"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brupn"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyshi"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(16, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhkxr"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3eif"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0db5"]
+atlas = ExtResource("2_y7hqq")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xdlo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km4hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vp8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bbkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsma6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brupn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyshi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhkxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3eif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0db5")
+}],
+"loop": false,
+"name": &"dissipate",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcb5n"]
+radius = 2.0
+
+[node name="EnergyBullet" type="Area2D" unique_id=1035003802]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_lhkxr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1323273354]
+sprite_frames = SubResource("SpriteFrames_2xdlo")
+animation = &"dissipate"
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=534137714]
+shape = SubResource("CircleShape2D_wcb5n")
+
+[node name="LifetimeTimer" type="Timer" parent="." unique_id=1693036267]

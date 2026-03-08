@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cwlrncfft6kag" path="res://Actors/Missile/_art/missile.png" id="1_f72ud"]
 [ext_resource type="Script" uid="uid://v3yqu4iimuog" path="res://Actors/Missile/missile.gd" id="1_ukxhg"]
-[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Common/Actors/Components/Hitbox/Hitbox.tscn" id="3_ukxhg"]
-[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="4_sukqb"]
-[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Common/Actors/Components/Hurtbox/Hurtbox.tscn" id="5_8803o"]
+[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="3_ukxhg"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="4_sukqb"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="5_8803o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40kgx"]
 atlas = ExtResource("1_f72ud")

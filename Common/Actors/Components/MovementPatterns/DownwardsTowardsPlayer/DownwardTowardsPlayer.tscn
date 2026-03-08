@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://fath7ckl4o02"]
-
-[ext_resource type="Script" uid="uid://c3bfvvtgapaiu" path="res://Common/Actors/Components/MovementPatterns/DownwardsTowardsPlayer/downward_towards_player.gd" id="1_5ikw3"]
-
-[node name="DownwardTowardsPlayer" type="Node"]
-script = ExtResource("1_5ikw3")

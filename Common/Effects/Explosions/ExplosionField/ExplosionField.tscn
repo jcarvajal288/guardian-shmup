@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://h1siy3g3f2n"]
-
-[ext_resource type="Script" uid="uid://d344y5wwm6kxt" path="res://Common/Effects/Explosions/ExplosionField/explosion_field.gd" id="1_xfubr"]
-
-[node name="ExplosionField" type="Node2D"]
-script = ExtResource("1_xfubr")
-
-[node name="WaveDelayTimer" type="Timer" parent="."]
-autostart = true

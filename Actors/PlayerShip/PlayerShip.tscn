@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://uim1eimld2py" path="res://Actors/PlayerShip/player_ship.gd" id="1_dnh3m"]
 [ext_resource type="Texture2D" uid="uid://cj37ksbqyn2sx" path="res://Actors/PlayerShip/_art/player_ship.png" id="1_o4oq4"]
 [ext_resource type="PackedScene" uid="uid://dde35rv6qbao4" path="res://Actors/PlayerShip/Shield/Shield.tscn" id="3_a35rf"]
-[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Common/Actors/Components/Hurtbox/Hurtbox.tscn" id="4_4rfch"]
-[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="5_4rfch"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="4_4rfch"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="5_4rfch"]
 [ext_resource type="PackedScene" uid="uid://cr1ssknh8vndm" path="res://Actors/PlayerShip/DeathExplosion/DeathExplosion.tscn" id="6_gdeyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnh3m"]

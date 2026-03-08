@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bh4d2mklwou1l" path="res://Actors/EyeBoss/_art/eye_frame.png" id="2_r27tw"]
 [ext_resource type="PackedScene" uid="uid://cqsepu2bglx5f" path="res://Actors/EyeBoss/MissileLauncher/MissileLauncher.tscn" id="2_xkob0"]
 [ext_resource type="PackedScene" uid="uid://u2qm7gv6w7bd" path="res://Actors/EyeBoss/EnergyTurret.tscn" id="3_xkob0"]
-[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="5_qujhq"]
-[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Common/Actors/Components/Hurtbox/Hurtbox.tscn" id="6_hkjag"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="5_qujhq"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="6_hkjag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv4rw"]
 size = Vector2(33, 20)

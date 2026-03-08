@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://crshjkskwce1e"]
-
-[ext_resource type="Script" uid="uid://b2pnif3nrpgkb" path="res://Common/Actors/Components/MovementPatterns/MoveBetweenPoints/move_between_points.gd" id="1_flxm3"]
-
-[node name="MoveBetweenPoints" type="Node" unique_id=762228387]
-script = ExtResource("1_flxm3")

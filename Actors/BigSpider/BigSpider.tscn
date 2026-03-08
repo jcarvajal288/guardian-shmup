@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c36eop44xvj7j" path="res://Actors/BigSpider/_art/BigSpider.png" id="1_qs13c"]
 [ext_resource type="Script" uid="uid://b6ngswfl0athr" path="res://Actors/BigSpider/big_spider.gd" id="1_sclkw"]
-[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Common/Actors/Components/Hurtbox/Hurtbox.tscn" id="3_giipv"]
-[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Common/Actors/Components/Hitbox/Hitbox.tscn" id="4_tl02t"]
-[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="5_4j6yc"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="3_giipv"]
+[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="4_tl02t"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="5_4j6yc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtmmh"]
 atlas = ExtResource("1_qs13c")

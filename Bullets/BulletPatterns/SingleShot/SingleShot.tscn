@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c2q7neivk48qd"]
+
+[ext_resource type="Script" uid="uid://b5qlppw7dtn77" path="res://Bullets/BulletPatterns/SingleShot/single_shot.gd" id="1_i3t2d"]
+
+[node name="SingleShot" type="Node2D"]
+script = ExtResource("1_i3t2d")
+
+[node name="StartupTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RepeatTimer" type="Timer" parent="."]
+one_shot = true

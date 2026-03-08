@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://chafqp8k2xawk"]
-
-[ext_resource type="Script" uid="uid://bvhh7tae6gx71" path="res://Common/Actors/Components/StateMachine/State/state.gd" id="1_lcobf"]
-
-[node name="State" type="Node" unique_id=1988016383]
-script = ExtResource("1_lcobf")

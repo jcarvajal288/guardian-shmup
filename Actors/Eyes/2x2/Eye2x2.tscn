@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dcuv10nfpscik"]
+
+[ext_resource type="Texture2D" uid="uid://cydr6r22wrcm" path="res://Actors/Eyes/2x2/2x2_eye.png" id="1_edscp"]
+[ext_resource type="Script" uid="uid://bf28jyab0hdqv" path="res://Actors/Eyes/2x2/eye_2x2.gd" id="2_jnimy"]
+
+[node name="Eye2x2" type="Sprite2D" unique_id=51484693]
+texture = ExtResource("1_edscp")
+script = ExtResource("2_jnimy")

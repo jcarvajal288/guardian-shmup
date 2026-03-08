@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cp55sguhjukgu"]
+
+[ext_resource type="Script" uid="uid://hxxkvx8075ne" path="res://Components/MovementPatterns/StraightAtPlayer/straight_at_player.gd" id="1_em13r"]
+
+[node name="StraightAtPlayer" type="Node"]
+script = ExtResource("1_em13r")

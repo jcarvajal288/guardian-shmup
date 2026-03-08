@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://e38na0cab66d" path="res://Actors/EyeBoss/energy_turret.gd" id="1_8080a"]
 [ext_resource type="Texture2D" uid="uid://bqqd1kkkkhsku" path="res://Actors/EyeBoss/_art/energy_turret.png" id="1_wfni0"]
-[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Common/Actors/Components/Hurtbox/Hurtbox.tscn" id="3_u58u0"]
-[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Common/Actors/Components/Health/Health.tscn" id="4_wfcev"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="3_u58u0"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="4_wfcev"]
 
 [sub_resource type="Animation" id="Animation_3jgq6"]
 length = 0.001

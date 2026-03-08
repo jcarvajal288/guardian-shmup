@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://x8xlvefbift7"]
+
+[ext_resource type="Script" uid="uid://do8wcbmhoho1k" path="res://Components/MovementPatterns/MoveStraight/move_straight.gd" id="1_jryj4"]
+
+[node name="MoveStraight" type="Node" unique_id=1952140057]
+script = ExtResource("1_jryj4")
