@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d0bbsooype7w1"]
+
+[ext_resource type="Script" uid="uid://dn6da666j5bny" path="res://Actors/PlayerShip/Shot1/shot_1.gd" id="1_nojch"]
+[ext_resource type="Texture2D" uid="uid://dilni1tfhbly" path="res://Actors/PlayerShip/_art/shot1.png" id="2_34nhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6wyt"]
+size = Vector2(4, 4)
+
+[node name="Shot1" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_nojch")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_34nhx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i6wyt")

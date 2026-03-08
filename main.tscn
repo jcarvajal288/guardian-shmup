@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cevmhwburofnj"]
 
 [ext_resource type="Script" uid="uid://lvqoedsmjxkn" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cnw8wodxx25p" path="res://Shmup/Levels/Approach/Approach.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cnw8wodxx25p" path="res://Levels/Approach/Approach.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://djhp2w3nm3qqk" path="res://UI/GameOverScreen.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dxucbx86pi6rn" path="res://Assets/Sounds/SoundManager/SoundManager.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cymlp6itmc4yd" path="res://UI/GameWindow/GameWindow.tscn" id="5_lquwl"]

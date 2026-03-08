@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://qq71e5132xst"]
+
+[ext_resource type="Script" uid="uid://x5vxie0x6cgb" path="res://Actors/EyeBoss/Eye/eye.gd" id="1_xkob0"]
+[ext_resource type="Texture2D" uid="uid://5b4r6rdg6vya" path="res://Actors/EyeBoss/_art/eye.png" id="3_qujhq"]
+[ext_resource type="PackedScene" uid="uid://dia6divs7ywoe" path="res://Common/Bullets/BulletPatterns/FireArc/FireArc.tscn" id="4_wumed"]
+[ext_resource type="PackedScene" uid="uid://bdnhmljf38fav" path="res://Common/Bullets/Ball/BallBullet.tscn" id="5_gfxtg"]
+
+[node name="Eye" type="Node2D" unique_id=1390145171]
+script = ExtResource("1_xkob0")
+
+[node name="EyeSprite" type="Sprite2D" parent="." unique_id=2103441538]
+texture = ExtResource("3_qujhq")
+hframes = 3
+vframes = 2
+
+[node name="FireArc" parent="." unique_id=1126738026 instance=ExtResource("4_wumed")]
+bullet_type = ExtResource("5_gfxtg")
+arc = 30.0
+bullets_in_arc = 3
+
+[node name="FireDown" type="Marker2D" parent="." unique_id=973062016]
+position = Vector2(0, 7)
+gizmo_extents = 2.0
+
+[node name="FireLeft" type="Marker2D" parent="." unique_id=211269440]
+position = Vector2(-8, 5)
+gizmo_extents = 2.0
+
+[node name="FireRight" type="Marker2D" parent="." unique_id=418956966]
+position = Vector2(8, 5)

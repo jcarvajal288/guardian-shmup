@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cnw8wodxx25p"]
+
+[ext_resource type="Script" uid="uid://bb4svuo6wnbc1" path="res://Common/level.gd" id="1_k1w1i"]
+[ext_resource type="PackedScene" uid="uid://c0khkk0nmdh1n" path="res://Levels/Approach/ScrollingSpace/ScrollingSpace.tscn" id="1_x06so"]
+[ext_resource type="PackedScene" uid="uid://drthg1m8xc5eh" path="res://Actors/PlayerShip/PlayerShip.tscn" id="2_k1w1i"]
+[ext_resource type="PackedScene" uid="uid://deb5stmt5ecmn" path="res://Levels/LevelBoundaries/LevelBoundaries.tscn" id="3_5uk6s"]
+[ext_resource type="PackedScene" uid="uid://gcg5xd5mxmjp" path="res://Levels/Approach/ApproachScript.tscn" id="4_s1p3p"]
+
+[node name="Approach" type="Node2D" unique_id=1156862012]
+script = ExtResource("1_k1w1i")
+
+[node name="ScrollingSpace" parent="." unique_id=889226542 instance=ExtResource("1_x06so")]
+
+[node name="PlayerShip" parent="." unique_id=1655584674 instance=ExtResource("2_k1w1i")]
+position = Vector2(81, 110)
+
+[node name="LevelBoundaries" parent="." unique_id=1449882389 instance=ExtResource("3_5uk6s")]
+position = Vector2(1, -6)
+
+[node name="ApproachScript" parent="." unique_id=1660487450 instance=ExtResource("4_s1p3p")]
+position = Vector2(1, 0)

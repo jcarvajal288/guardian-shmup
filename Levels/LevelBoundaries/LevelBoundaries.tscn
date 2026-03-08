@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://deb5stmt5ecmn"]
+
+[ext_resource type="Script" uid="uid://bvk6ckbcgxx2g" path="res://Levels/LevelBoundaries/bullet_cleanup.gd" id="1_dfu6j"]
+[ext_resource type="Script" uid="uid://c3uy5qhfrlim6" path="res://Levels/LevelBoundaries/enemy_cleanup.gd" id="2_2b7ao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(178, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(10, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(9, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(180, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b7ao"]
+size = Vector2(180, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8quo8"]
+size = Vector2(20, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dg3k"]
+size = Vector2(20, 184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3vg5"]
+size = Vector2(192, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_off8e"]
+size = Vector2(288, 284)
+
+[node name="LevelBoundaries" type="Node2D"]
+
+[node name="PlayerBoundaries" type="Node" parent="."]
+
+[node name="PlayerBoundaryNorth" type="StaticBody2D" parent="PlayerBoundaries"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryNorth"]
+position = Vector2(81.5, -5)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="PlayerBoundaryWest" type="StaticBody2D" parent="PlayerBoundaries"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryWest"]
+position = Vector2(-5, 70)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="PlayerBoundaryEast" type="StaticBody2D" parent="PlayerBoundaries"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryEast"]
+position = Vector2(164.5, 71)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="PlayerBoundary South" type="StaticBody2D" parent="PlayerBoundaries"]
+position = Vector2(0, -16)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundary South"]
+position = Vector2(78, 147)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="BulletCleanup" type="Node" parent="."]
+
+[node name="CleanupNorth" type="Area2D" parent="BulletCleanup"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_dfu6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupNorth"]
+position = Vector2(80, -12)
+shape = SubResource("RectangleShape2D_2b7ao")
+debug_color = Color(0, 0.5334605, 0.9810652, 0.41960785)
+
+[node name="CleanupWest" type="Area2D" parent="BulletCleanup"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_dfu6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupWest"]
+position = Vector2(-12, 75)
+shape = SubResource("RectangleShape2D_8quo8")
+debug_color = Color(0, 0.53333336, 0.98039216, 0.41960785)
+
+[node name="CleanupEast" type="Area2D" parent="BulletCleanup"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_dfu6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupEast"]
+position = Vector2(172, 68)
+shape = SubResource("RectangleShape2D_4dg3k")
+debug_color = Color(0, 0.53333336, 0.98039216, 0.41960785)
+
+[node name="CleanupSouth" type="Area2D" parent="BulletCleanup"]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_dfu6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupSouth"]
+position = Vector2(85, 156)
+shape = SubResource("RectangleShape2D_r3vg5")
+debug_color = Color(0, 0.53333336, 0.98039216, 0.41960785)
+
+[node name="EnemyCleanup" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_2b7ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCleanup"]
+position = Vector2(80, 75)
+shape = SubResource("RectangleShape2D_off8e")
+debug_color = Color(0.65834004, 0.6583399, 0.6583399, 0.15686275)

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr1ssknh8vndm"]
-
-[ext_resource type="Script" uid="uid://bx6dv4vkxda7d" path="res://Shmup/Actors/PlayerShip/DeathExplosion/death_explosion.gd" id="1_uuns4"]
-
-[node name="DeathExplosion" type="Node2D"]
-script = ExtResource("1_uuns4")
