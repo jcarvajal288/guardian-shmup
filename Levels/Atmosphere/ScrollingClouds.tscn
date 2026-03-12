@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jf55ojw8n4xs"]
+
+[ext_resource type="Texture2D" uid="uid://da1b2mvdn5bau" path="res://Levels/Atmosphere/_art/terrain.png" id="1_ikxnp"]
+[ext_resource type="Texture2D" uid="uid://vlsmor4kk3kj" path="res://Levels/Atmosphere/_art/clouds.png" id="2_jegaj"]
+
+[node name="ScrollingClouds" type="Node2D" unique_id=53614039]
+
+[node name="TerrainLayer" type="Parallax2D" parent="." unique_id=1000557245]
+repeat_size = Vector2(0, 144)
+autoscroll = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="TerrainLayer" unique_id=1351551420]
+position = Vector2(80, 144)
+texture = ExtResource("1_ikxnp")
+
+[node name="CloudLayer" type="Parallax2D" parent="." unique_id=1749991712]
+repeat_size = Vector2(0, 288)
+autoscroll = Vector2(0, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudLayer" unique_id=529157091]
+position = Vector2(80, 144)
+texture = ExtResource("2_jegaj")

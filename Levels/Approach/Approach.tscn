@@ -12,7 +12,7 @@ script = ExtResource("1_tmb1t")
 [node name="ScrollingSpace" parent="." unique_id=889226542 instance=ExtResource("1_x06so")]
 
 [node name="PlayerShip" parent="." unique_id=1655584674 instance=ExtResource("2_k1w1i")]
-position = Vector2(81, 110)
+position = Vector2(80, 110)
 
 [node name="LevelBoundaries" parent="." unique_id=1449882389 instance=ExtResource("3_5uk6s")]
 position = Vector2(1, -6)

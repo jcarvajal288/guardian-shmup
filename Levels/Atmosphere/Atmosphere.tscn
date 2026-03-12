@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://v86xbkch4rpy"]
+
+[ext_resource type="Script" uid="uid://yhv2x6ajrbue" path="res://Levels/level.gd" id="1_hsqfj"]
+[ext_resource type="PackedScene" uid="uid://jf55ojw8n4xs" path="res://Levels/Atmosphere/ScrollingClouds.tscn" id="2_huhpk"]
+[ext_resource type="PackedScene" uid="uid://drthg1m8xc5eh" path="res://Actors/PlayerShip/PlayerShip.tscn" id="3_5nfiw"]
+[ext_resource type="PackedScene" uid="uid://deb5stmt5ecmn" path="res://Levels/LevelBoundaries/LevelBoundaries.tscn" id="4_v847e"]
+
+[node name="Atmosphere" type="Node2D" unique_id=1219545025]
+script = ExtResource("1_hsqfj")
+metadata/_custom_type_script = "uid://yhv2x6ajrbue"
+
+[node name="ScrollingClouds" parent="." unique_id=53614039 instance=ExtResource("2_huhpk")]
+
+[node name="PlayerShip" parent="." unique_id=1030482007 instance=ExtResource("3_5nfiw")]
+position = Vector2(80, 110)
+
+[node name="LevelBoundaries" parent="." unique_id=1382455041 instance=ExtResource("4_v847e")]
