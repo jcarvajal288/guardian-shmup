@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://doi3svpfw1rs7"]
+
+[ext_resource type="Script" uid="uid://cepo4oh68ohqo" path="res://Actors/Buzzsaw/buzzsaw.gd" id="1_yi5ov"]
+[ext_resource type="Texture2D" uid="uid://bt2mf7m5hid5m" path="res://Actors/Buzzsaw/_art/buzzsaw.png" id="2_4ij4q"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="3_ap7uh"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="3_yi5ov"]
+[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="4_oq6p1"]
+[ext_resource type="PackedScene" uid="uid://ceqb3nhse7cwx" path="res://Components/MovementPatterns/ChasePlayer/ChasePlayer.tscn" id="5_oq6p1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg71c"]
+atlas = ExtResource("2_4ij4q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap7uh"]
+atlas = ExtResource("2_4ij4q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq6p1"]
+atlas = ExtResource("2_4ij4q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi5ov"]
+atlas = ExtResource("2_4ij4q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qhn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg71c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap7uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq6p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi5ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2kd7"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi5ov"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qhn5"]
+radius = 10.049875
+
+[node name="Buzzsaw" type="CharacterBody2D" unique_id=465022244]
+script = ExtResource("1_yi5ov")
+metadata/_custom_type_script = "uid://36xp1vau0gih"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095110906]
+sprite_frames = SubResource("SpriteFrames_4qhn5")
+autoplay = "default"
+frame_progress = 0.4723754
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1291753287]
+shape = SubResource("CircleShape2D_n2kd7")
+
+[node name="Health" parent="." unique_id=1148081835 instance=ExtResource("3_yi5ov")]
+max_health = 5.0
+
+[node name="Hurtbox" parent="." unique_id=867860352 instance=ExtResource("3_ap7uh")]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=719271502]
+shape = SubResource("CircleShape2D_yi5ov")
+
+[node name="Hitbox" parent="." unique_id=1410778573 instance=ExtResource("4_oq6p1")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1798230965]
+shape = SubResource("CircleShape2D_4qhn5")
+
+[node name="ChasePlayer" parent="." unique_id=683398299 node_paths=PackedStringArray("subject") instance=ExtResource("5_oq6p1")]
+subject = NodePath("..")
+speed = 10.0
+turn_rate = 0.5
+
+[node name="BounceTimer" type="Timer" parent="." unique_id=397074814]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
