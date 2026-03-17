@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="3_yi5ov"]
 [ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="4_oq6p1"]
 [ext_resource type="PackedScene" uid="uid://ceqb3nhse7cwx" path="res://Components/MovementPatterns/ChasePlayer/ChasePlayer.tscn" id="5_oq6p1"]
+[ext_resource type="PackedScene" uid="uid://dsaqfvsfhm8y4" path="res://Actors/Eyes/3x3/Eye3x3.tscn" id="7_4qhn5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg71c"]
 atlas = ExtResource("2_4ij4q")
@@ -60,6 +61,8 @@ metadata/_custom_type_script = "uid://36xp1vau0gih"
 sprite_frames = SubResource("SpriteFrames_4qhn5")
 autoplay = "default"
 frame_progress = 0.4723754
+
+[node name="Eye3x3" parent="." unique_id=212352164 instance=ExtResource("7_4qhn5")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1291753287]
 shape = SubResource("CircleShape2D_n2kd7")
