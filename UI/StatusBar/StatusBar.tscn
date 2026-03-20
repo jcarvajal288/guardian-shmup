@@ -1,11 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://odae08ihwgt0"]
+[gd_scene format=3 uid="uid://odae08ihwgt0"]
 
 [ext_resource type="Texture2D" uid="uid://c6x6sai7bi06b" path="res://UI/_art/bottom_bar_background.png" id="1_k6gla"]
 [ext_resource type="PackedScene" uid="uid://b3cqaau7t1pa4" path="res://UI/StatusBar/HealthBar/HealthBar.tscn" id="2_wchv5"]
+[ext_resource type="PackedScene" uid="uid://ds4501y08iio6" path="res://UI/StatusBar/Score/Score.tscn" id="3_yxylg"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=895614735]
 
-[node name="StatusBar" type="Control" parent="."]
+[node name="StatusBar" type="Control" parent="." unique_id=672046195]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,10 +14,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="StatusBar"]
+[node name="Sprite2D" type="Sprite2D" parent="StatusBar" unique_id=957930427]
 position = Vector2(80, 136)
 texture = ExtResource("1_k6gla")
 
-[node name="HealthBar" parent="." instance=ExtResource("2_wchv5")]
+[node name="HealthBar" parent="." unique_id=1493735037 instance=ExtResource("2_wchv5")]
 z_index = 1
 position = Vector2(8, 135)
+
+[node name="Score" parent="." unique_id=843457183 instance=ExtResource("3_yxylg")]
+position = Vector2(103, 132)

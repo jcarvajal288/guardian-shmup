@@ -31,6 +31,7 @@ signal reset
 signal bind_camera(rect: Rect2)
 signal add_node_to_level(node: Node2D)
 signal transition_room(room: Node2D, entryId: String)
+signal add_score(amount: int)
 @warning_ignore_restore("unused_signal")
 
 

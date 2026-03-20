@@ -11,4 +11,5 @@ func _on_death() -> void:
 	explosion.global_position = global_position
 	Global.add_node_to_level.emit(explosion)
 	Sounds.play_sound.emit(Sounds.SoundEffect.SMALL_EXPLOSION_1, global_position)
+	Global.add_score.emit(GameStats.SPIDER_SCORE)
 	queue_free()

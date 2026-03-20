@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ds4501y08iio6"]
+
+[ext_resource type="Script" uid="uid://bioeyd8x4n0oa" path="res://UI/StatusBar/Score/score.gd" id="1_c2ts6"]
+[ext_resource type="FontFile" uid="uid://bfrgy55f40ppw" path="res://Assets/Fonts/DiaryOfAn8BitMage-lYDD.ttf" id="1_qy4gf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2ts6"]
+font = ExtResource("1_qy4gf")
+font_size = 9
+font_color = Color(0.8784314, 0.972549, 0.8117647, 1)
+
+[node name="Score" type="Node2D" unique_id=843457183]
+script = ExtResource("1_c2ts6")
+
+[node name="Label" type="Label" parent="." unique_id=2005619231]
+offset_right = 55.0
+offset_bottom = 9.0
+text = "000000000"
+label_settings = SubResource("LabelSettings_c2ts6")
+horizontal_alignment = 2
+vertical_alignment = 1
