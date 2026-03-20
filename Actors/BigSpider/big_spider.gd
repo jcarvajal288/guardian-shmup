@@ -5,7 +5,6 @@ func _ready() -> void:
 	super()
 	$Hurtbox.on_hit.connect(_on_hit)
 	$Health.set_health(GameStats.BIG_SPIDER_HEALTH)
-	$Health.on_death.connect(_on_death)
 	$ShotTimer.timeout.connect(fire)
 	$ShotTimer.start(3.0)
 	$AnimatedSprite2D.animation_finished.connect(_on_animation_finished)
@@ -21,11 +20,11 @@ func _on_hit(_dmg: float) -> void:
 
 
 func _on_death() -> void:
-	var explosion = Effects.EXPLOSION_32x32.instantiate()
-	explosion.global_position = global_position
-	Global.add_node_to_level.emit(explosion)
-	Sounds.play_sound.emit(Sounds.SoundEffect.SMALL_EXPLOSION_1, global_position)
-	queue_free()
+	handle_death(
+		Effects.EXPLOSION_32x32, 
+		Sounds.SoundEffect.SMALL_EXPLOSION_1, 
+		GameStats.BIG_SPIDER_SCORE
+	)
 
 
 func fire() -> void:
