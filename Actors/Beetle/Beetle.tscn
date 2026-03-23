@@ -110,6 +110,7 @@ subject = NodePath("..")
 
 [node name="SingleShot" parent="." unique_id=768143794 instance=ExtResource("7_vc1f6")]
 bullet_type = ExtResource("8_0cnuv")
+startup_time = 0.001
 
 [editable path="Hitbox"]
 [editable path="Hurtbox"]
