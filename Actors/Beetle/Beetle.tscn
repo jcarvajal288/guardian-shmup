@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dkjk53o0gigvl"]
+
+[ext_resource type="Script" uid="uid://cagg570x1y142" path="res://Actors/Beetle/beetle.gd" id="1_ib4wd"]
+[ext_resource type="Texture2D" uid="uid://caxy7qsclj5d2" path="res://Actors/Beetle/_art/beetle.png" id="2_t3kci"]
+[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="3_woenc"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="4_vc1f6"]
+[ext_resource type="Script" uid="uid://catakkqdo3ot3" path="res://Components/Health/health.gd" id="5_0cnuv"]
+[ext_resource type="PackedScene" uid="uid://8qpyn2574kts" path="res://Components/MovementPatterns/MoveToPoint/MoveToPoint.tscn" id="6_t3kci"]
+[ext_resource type="PackedScene" uid="uid://c2q7neivk48qd" path="res://Bullets/BulletPatterns/SingleShot/SingleShot.tscn" id="7_vc1f6"]
+[ext_resource type="PackedScene" uid="uid://bdnhmljf38fav" path="res://Bullets/Ball/BallBullet.tscn" id="8_0cnuv"]
+
+[sub_resource type="Animation" id="Animation_8pbfo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mwsva"]
+resource_name = "moving"
+length = 0.20001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_vxd5y"]
+resource_name = "shooting"
+length = 0.40002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtjbb"]
+_data = {
+&"RESET": SubResource("Animation_8pbfo"),
+&"moving": SubResource("Animation_mwsva"),
+&"shooting": SubResource("Animation_vxd5y")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_okuup"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppwh6"]
+radius = 8.062258
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcbjk"]
+radius = 8.0
+
+[node name="Beetle" type="CharacterBody2D" unique_id=389398771]
+script = ExtResource("1_ib4wd")
+metadata/_custom_type_script = "uid://36xp1vau0gih"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=534800640]
+texture = ExtResource("2_t3kci")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1305739158]
+libraries/ = SubResource("AnimationLibrary_wtjbb")
+autoplay = &"moving"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845355637]
+shape = SubResource("CircleShape2D_okuup")
+
+[node name="Hitbox" parent="." unique_id=1410778573 instance=ExtResource("3_woenc")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1798230965]
+shape = SubResource("CircleShape2D_ppwh6")
+
+[node name="Hurtbox" parent="." unique_id=867860352 instance=ExtResource("4_vc1f6")]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=719271502]
+shape = SubResource("CircleShape2D_qcbjk")
+
+[node name="Health" type="Node" parent="." unique_id=521820706]
+script = ExtResource("5_0cnuv")
+metadata/_custom_type_script = "uid://catakkqdo3ot3"
+
+[node name="MoveToPoint" parent="." unique_id=862467731 node_paths=PackedStringArray("subject") instance=ExtResource("6_t3kci")]
+subject = NodePath("..")
+
+[node name="SingleShot" parent="." unique_id=768143794 instance=ExtResource("7_vc1f6")]
+bullet_type = ExtResource("8_0cnuv")
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]

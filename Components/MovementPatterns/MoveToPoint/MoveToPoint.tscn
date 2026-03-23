@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8qpyn2574kts"]
+
+[ext_resource type="Script" uid="uid://bv6ipughw6ut1" path="res://Components/MovementPatterns/MoveToPoint/move_to_point.gd" id="1_r4xbd"]
+
+[node name="MoveToPoint" type="Node" unique_id=862467731]
+script = ExtResource("1_r4xbd")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dklvlrtcvkech"]
+
+[ext_resource type="Script" uid="uid://b7jcag6by37nb" path="res://Levels/Atmosphere/atmosphere_script.gd" id="1_y055b"]
+
+[node name="AtmosphereScript" type="Node" unique_id=30805202]
+script = ExtResource("1_y055b")
