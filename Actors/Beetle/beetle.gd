@@ -5,7 +5,6 @@ func _ready() -> void:
 	super()
 	$Health.set_health(GameStats.BEETLE_HEALTH)
 	$SingleShot.process_mode = Node.PROCESS_MODE_DISABLED
-	$MoveToPoint.speed = GameStats.BEETLE_SPEED
 	$MoveToPoint.stopped_moving.connect(start_shooting)
 	$MoveToPoint.start_moving()
 	
@@ -15,8 +14,9 @@ func start_shooting() -> void:
 	$SingleShot.process_mode = Node.PROCESS_MODE_INHERIT
 
 
-func set_destination(destination: Vector2) -> void:
+func set_movement(destination: Vector2, time: float) -> void:
 	$MoveToPoint.destination = destination
+	$MoveToPoint.time_to_dest = time
 
 
 func _on_death() -> void:
