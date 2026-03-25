@@ -7,4 +7,5 @@ func _ready() -> void:
 
 
 func cleanup(body: Node2D) -> void:
+	print('cleanup')
 	body.queue_free()

@@ -3,6 +3,9 @@ class_name Enemy extends CharacterBody2D
 
 func _init() -> void:
 	z_index = Global.RenderOrder.ENEMY
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, true)
+	set_collision_mask_value(1, false)
 
 
 func _ready() -> void:
