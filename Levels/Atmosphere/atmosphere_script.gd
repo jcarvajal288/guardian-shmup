@@ -7,10 +7,6 @@ func _ready() -> void:
 	build_level()
 
 
-func add_y(v: Vector2, y: float) -> Vector2:
-	return Vector2(v.x, v.y + y)
-
-
 func spawn_beetle(starting_point: Vector2, destination: Vector2, time: float) -> void:
 	var beetle = BEETLE.instantiate()
 	beetle.global_position = starting_point
@@ -19,7 +15,9 @@ func spawn_beetle(starting_point: Vector2, destination: Vector2, time: float) ->
 
 
 func build_level() -> void:
-	# spawn_beetle(add_y(SPAWN_TOP_MIDDLE, 20), add_y(SPAWN_TOP_MIDDLE, 40))
-	var p = SPAWN_TOP_MIDDLE
-	# var p = Vector2(20,20)
-	spawn_beetle(p, add_y(p, 40), 1.0)
+	await Global.wait_for_sec(1.5)
+	spawn_beetle(SPAWN_TOP_2_3RDS_LEFT, add_y(SPAWN_TOP_2_3RDS_LEFT, 40), 1.5)
+	await Global.wait_for_sec(0.4)
+	spawn_beetle(SPAWN_TOP_2_3RDS_RIGHT, add_y(SPAWN_TOP_2_3RDS_RIGHT, 40), 1.5)
+	await Global.wait_for_sec(0.4)
+	spawn_beetle(SPAWN_TOP_MIDDLE, add_y(SPAWN_TOP_MIDDLE, 40), 1.5)
