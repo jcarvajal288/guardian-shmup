@@ -2,7 +2,6 @@ extends LevelScript
 
 
 const MISSILE: PackedScene = preload("res://Actors/Missile/Missile.tscn")
-const SPIDER: PackedScene = preload("res://Actors/Spider/Spider.tscn")
 const EEL: PackedScene = preload("res://Actors/SpaceEel/SpaceEel.tscn")
 const BIG_SPIDER: PackedScene = preload("res://Actors/BigSpider/BigSpider.tscn")
 const BOSS: PackedScene = preload("res://Actors/EyeBoss/EyeBoss.tscn")
@@ -29,28 +28,6 @@ func spawn_missile() -> void:
 	missile.global_position = spawns[spawn]
 	missile.add_child(move_pattern)
 	get_parent().add_child.call_deferred(missile)
-
-
-func spawn_spider(spawn: Vector2, direction = Global.TOWARDS_PLAYER) -> void:
-	var spider = SPIDER.instantiate()
-
-	var move_pattern = MovementPatterns.MOVE_STRAIGHT.instantiate()
-	move_pattern.subject = spider
-	move_pattern.direction = direction
-	move_pattern.speed = GameStats.SPIDER_SPEED
-
-	var bullet_pattern = BulletPatterns.SINGLE_SHOT.instantiate()
-	bullet_pattern.bullet_type = Bullets.BALL_BULLET
-	bullet_pattern.speed = 75.0
-	bullet_pattern.direction = Global.TOWARDS_PLAYER
-	bullet_pattern.startup_time = Global.rng.randf_range(0.5, 1.5)
-	bullet_pattern.repeat_time = Global.INFINITE
-	bullet_pattern.damage = GameStats.SPIDER_DAMAGE
-
-	spider.global_position = spawn
-	spider.add_child(move_pattern)
-	spider.add_child(bullet_pattern)
-	get_parent().add_child.call_deferred(spider)
 
 
 func spawn_eel(spawn: Vector2) -> void:
