@@ -2,8 +2,6 @@ extends LevelScript
 
 
 const MISSILE: PackedScene = preload("res://Actors/Missile/Missile.tscn")
-const EEL: PackedScene = preload("res://Actors/SpaceEel/SpaceEel.tscn")
-const BIG_SPIDER: PackedScene = preload("res://Actors/BigSpider/BigSpider.tscn")
 const BOSS: PackedScene = preload("res://Actors/EyeBoss/EyeBoss.tscn")
 
 
@@ -28,25 +26,6 @@ func spawn_missile() -> void:
 	missile.global_position = spawns[spawn]
 	missile.add_child(move_pattern)
 	get_parent().add_child.call_deferred(missile)
-
-
-func spawn_eel(spawn: Vector2) -> void:
-	var eel = EEL.instantiate()
-	eel.global_position = spawn
-	get_parent().add_child.call_deferred(eel)
-
-
-func spawn_big_spider(spawn: Vector2, pointA: Vector2, pointB: Vector2) -> void:
-	var spider = BIG_SPIDER.instantiate()
-	spider.global_position = spawn
-
-	var move_pattern = MovementPatterns.MOVE_BETWEEN_POINTS.instantiate()
-	move_pattern.subject = spider
-	move_pattern.speed = GameStats.BIG_SPIDER_SPEED
-	move_pattern.pointA = pointA
-	move_pattern.pointB = pointB
-	spider.add_child(move_pattern)
-	get_parent().add_child.call_deferred(spider)
 
 
 func spawn_boss() -> void:

@@ -28,6 +28,8 @@ const SPAWN_BOTTOM_MIDDLE = Vector2(80, 148)
 const SPAWN_BOTTOM_HALF_RIGHT = Vector2(115, 148)
 const SPAWN_BOTTOM_RIGHT = Vector2(150.0, 148)
 
+const BIG_SPIDER: PackedScene = preload("res://Actors/BigSpider/BigSpider.tscn")
+const EEL: PackedScene = preload("res://Actors/SpaceEel/SpaceEel.tscn")
 const SPIDER: PackedScene = preload("res://Actors/Spider/Spider.tscn")
 
 
@@ -54,5 +56,24 @@ func spawn_spider(spawn: Vector2, direction = Global.TOWARDS_PLAYER) -> void:
 	spider.global_position = spawn
 	spider.add_child(move_pattern)
 	spider.add_child(bullet_pattern)
+	get_parent().add_child.call_deferred(spider)
+
+
+func spawn_eel(spawn: Vector2) -> void:
+	var eel = EEL.instantiate()
+	eel.global_position = spawn
+	get_parent().add_child.call_deferred(eel)
+
+
+func spawn_big_spider(spawn: Vector2, pointA: Vector2, pointB: Vector2) -> void:
+	var spider = BIG_SPIDER.instantiate()
+	spider.global_position = spawn
+
+	var move_pattern = MovementPatterns.MOVE_BETWEEN_POINTS.instantiate()
+	move_pattern.subject = spider
+	move_pattern.speed = GameStats.BIG_SPIDER_SPEED
+	move_pattern.pointA = pointA
+	move_pattern.pointB = pointB
+	spider.add_child(move_pattern)
 	get_parent().add_child.call_deferred(spider)
 

@@ -37,7 +37,7 @@ func build_level() -> void:
 		spawn_buzzsaw(SPAWN_RIGHT_MIDDLE)
 		await Global.wait_for_sec(5.0)
 
-	var spiders = func(start_point1, start_point2, direction):
+	var two_column_spiders = func(start_point1, start_point2, direction):
 		for i in range(10):
 			var starting_point = start_point1
 			if i % 2 == 0:	
@@ -47,6 +47,23 @@ func build_level() -> void:
 
 	saws.call()
 	await Global.wait_for_sec(1.0)
-	spiders.call(SPAWN_TOP_LEFT, SPAWN_TOP_LEFT_CORNER, Vector2(1, 1))
+	two_column_spiders.call(SPAWN_TOP_LEFT, SPAWN_TOP_LEFT_CORNER, Vector2(1, 1))
 	await Global.wait_for_sec(3.0)
-	spiders.call(SPAWN_TOP_RIGHT, SPAWN_TOP_RIGHT_CORNER, Vector2(-1, 1))
+	two_column_spiders.call(SPAWN_TOP_RIGHT, SPAWN_TOP_RIGHT_CORNER, Vector2(-1, 1))
+	await Global.wait_for_sec(5.0)
+
+	spawn_eel(SPAWN_TOP_2_3RDS_LEFT)
+	spawn_eel(SPAWN_TOP_2_3RDS_RIGHT)
+	await Global.wait_for_sec(0.5)
+	spawn_eel(SPAWN_TOP_MIDDLE)
+	await Global.wait_for_sec(5.0)
+
+	spawn_big_spider(SPAWN_LEFT_HALF_TOP, Vector2(20, 20), Vector2(140, 20))
+	await Global.wait_for_sec(2.0)
+
+	two_column_spiders.call(SPAWN_TOP_LEFT, SPAWN_TOP_LEFT_CORNER, Vector2(1, 1))
+	await Global.wait_for_sec(3.0)
+	two_column_spiders.call(SPAWN_TOP_RIGHT, SPAWN_TOP_RIGHT_CORNER, Vector2(-1, 1))
+	await Global.wait_for_sec(5.0)
+
+
