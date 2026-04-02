@@ -5,6 +5,7 @@ const BUZZSAW: PackedScene = preload("res://Actors/Buzzsaw/Buzzsaw.tscn")
 
 
 func _ready() -> void:
+	pass
 	build_level()
 
 

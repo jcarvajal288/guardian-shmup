@@ -30,88 +30,88 @@ size = Vector2(192, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_off8e"]
 size = Vector2(288, 284)
 
-[node name="LevelBoundaries" type="Node2D"]
+[node name="LevelBoundaries" type="Node2D" unique_id=1141580118]
 
-[node name="PlayerBoundaries" type="Node" parent="."]
+[node name="PlayerBoundaries" type="Node" parent="." unique_id=720915819]
 
-[node name="PlayerBoundaryNorth" type="StaticBody2D" parent="PlayerBoundaries"]
+[node name="PlayerBoundaryNorth" type="StaticBody2D" parent="PlayerBoundaries" unique_id=2115978645]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryNorth"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryNorth" unique_id=1614465042]
 position = Vector2(81.5, -5)
 shape = SubResource("RectangleShape2D_0xm2m")
 
-[node name="PlayerBoundaryWest" type="StaticBody2D" parent="PlayerBoundaries"]
+[node name="PlayerBoundaryWest" type="StaticBody2D" parent="PlayerBoundaries" unique_id=1579013056]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryWest"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryWest" unique_id=1075797260]
 position = Vector2(-5, 70)
 shape = SubResource("RectangleShape2D_h2yge")
 
-[node name="PlayerBoundaryEast" type="StaticBody2D" parent="PlayerBoundaries"]
+[node name="PlayerBoundaryEast" type="StaticBody2D" parent="PlayerBoundaries" unique_id=201170223]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryEast"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundaryEast" unique_id=1573249713]
 position = Vector2(164.5, 71)
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="PlayerBoundary South" type="StaticBody2D" parent="PlayerBoundaries"]
+[node name="PlayerBoundary South" type="StaticBody2D" parent="PlayerBoundaries" unique_id=1922482155]
 position = Vector2(0, -16)
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundary South"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries/PlayerBoundary South" unique_id=1849074538]
 position = Vector2(78, 147)
 shape = SubResource("RectangleShape2D_lquwl")
 
-[node name="BulletCleanup" type="Node" parent="."]
+[node name="BulletCleanup" type="Node" parent="." unique_id=1162713080]
 
-[node name="CleanupNorth" type="Area2D" parent="BulletCleanup"]
+[node name="CleanupNorth" type="Area2D" parent="BulletCleanup" unique_id=1064548403]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_dfu6j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupNorth"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupNorth" unique_id=1639263893]
 position = Vector2(80, -12)
 shape = SubResource("RectangleShape2D_2b7ao")
 debug_color = Color(0, 0.5334605, 0.9810652, 0.41960785)
 
-[node name="CleanupWest" type="Area2D" parent="BulletCleanup"]
+[node name="CleanupWest" type="Area2D" parent="BulletCleanup" unique_id=846815149]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_dfu6j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupWest"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupWest" unique_id=1792927324]
 position = Vector2(-12, 75)
 shape = SubResource("RectangleShape2D_8quo8")
 debug_color = Color(0, 0.53333336, 0.98039216, 0.41960785)
 
-[node name="CleanupEast" type="Area2D" parent="BulletCleanup"]
+[node name="CleanupEast" type="Area2D" parent="BulletCleanup" unique_id=1679818731]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_dfu6j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupEast"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupEast" unique_id=311561653]
 position = Vector2(172, 68)
 shape = SubResource("RectangleShape2D_4dg3k")
 debug_color = Color(0, 0.53333336, 0.98039216, 0.41960785)
 
-[node name="CleanupSouth" type="Area2D" parent="BulletCleanup"]
+[node name="CleanupSouth" type="Area2D" parent="BulletCleanup" unique_id=1668490203]
 position = Vector2(0, -16)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_dfu6j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupSouth"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCleanup/CleanupSouth" unique_id=722587413]
 position = Vector2(85, 156)
 shape = SubResource("RectangleShape2D_r3vg5")
 debug_color = Color(0, 0.53333336, 0.98039216, 0.41960785)
 
-[node name="EnemyCleanup" type="Area2D" parent="."]
-collision_layer = 2
+[node name="EnemyCleanup" type="Area2D" parent="." unique_id=957061686]
+collision_layer = 3
 collision_mask = 0
 script = ExtResource("2_2b7ao")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCleanup"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCleanup" unique_id=366615871]
 position = Vector2(80, 75)
 shape = SubResource("RectangleShape2D_off8e")
 debug_color = Color(0.65834004, 0.6583399, 0.6583399, 0.15686275)
