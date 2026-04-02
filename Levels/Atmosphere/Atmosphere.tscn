@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jf55ojw8n4xs" path="res://Levels/Atmosphere/ScrollingClouds.tscn" id="2_huhpk"]
 [ext_resource type="PackedScene" uid="uid://drthg1m8xc5eh" path="res://Actors/PlayerShip/PlayerShip.tscn" id="3_5nfiw"]
 [ext_resource type="PackedScene" uid="uid://deb5stmt5ecmn" path="res://Levels/LevelBoundaries/LevelBoundaries.tscn" id="4_v847e"]
+[ext_resource type="PackedScene" uid="uid://b708qn2lbrvh3" path="res://Pickups/ShieldPickup/ShieldPickup.tscn" id="6_7kfse"]
 [ext_resource type="PackedScene" uid="uid://dklvlrtcvkech" path="res://Levels/Atmosphere/AtmosphereScript.tscn" id="6_iwqw2"]
 
 [node name="Atmosphere" type="Node2D" unique_id=1219545025]
@@ -18,3 +19,6 @@ position = Vector2(80, 110)
 [node name="LevelBoundaries" parent="." unique_id=1382455041 instance=ExtResource("4_v847e")]
 
 [node name="AtmosphereScript" parent="." unique_id=30805202 instance=ExtResource("6_iwqw2")]
+
+[node name="ShieldPickup" parent="." unique_id=427595996 instance=ExtResource("6_7kfse")]
+position = Vector2(113, 64)

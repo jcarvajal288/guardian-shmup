@@ -18,4 +18,6 @@ enum SoundEffect {
 	PLAYER_SHIELD,
 
 	PLAYER_SHOT,
+
+	SHIELDS_UP,
 }

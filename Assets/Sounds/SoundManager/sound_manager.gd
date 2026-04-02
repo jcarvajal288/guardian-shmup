@@ -35,3 +35,5 @@ func _on_play_sound(sound_effect: Sounds.SoundEffect, sound_position: Vector2) -
 		play_sound_at_position($Hits/PlayerShield, sound_position)
 	elif sound_effect == Sounds.SoundEffect.PLAYER_SHOT:
 		play_sound_at_position($Shots/PlayerShot, sound_position)
+	elif sound_effect == Sounds.SoundEffect.SHIELDS_UP:
+		play_sound_at_position($Pickups/ShieldsUp, sound_position)

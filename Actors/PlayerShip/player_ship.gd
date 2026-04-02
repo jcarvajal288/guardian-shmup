@@ -87,3 +87,10 @@ func _on_hit(damage: float) -> void:
 func _on_death() -> void:
 	$DeathExplosion.start()
 	Sounds.play_sound.emit(Sounds.SoundEffect.PLAYER_EXPLOSION, global_position)
+
+
+func add_shield(amount: float) -> void:
+	$Health.current_health += amount
+	if $Health.current_health > $Health.max_health:
+		$Health.max_health = $Health.current_health
+	Global.player_health_changed.emit($Health.current_health, $Health.max_health)

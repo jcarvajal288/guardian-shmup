@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cy1c2ljexyhtj" path="res://Assets/Sounds/Explosions/eel_explosion.wav" id="9_i3eyx"]
 [ext_resource type="AudioStream" uid="uid://du4x8kl4mgrva" path="res://Assets/Sounds/Hits/player_shield.wav" id="10_lefc1"]
 [ext_resource type="AudioStream" uid="uid://bkpt6k0lrogh8" path="res://Assets/Sounds/Shots/player_shoot.wav" id="11_fkx11"]
+[ext_resource type="AudioStream" uid="uid://b17571huurtx7" path="res://Assets/Sounds/Pickups/shieldUp.wav" id="13_lc4q6"]
 
 [node name="SoundManager" type="Node" unique_id=1470937668]
 script = ExtResource("1_p0sh0")
@@ -55,3 +56,8 @@ stream = ExtResource("10_lefc1")
 [node name="PlayerShot" type="AudioStreamPlayer2D" parent="Shots" unique_id=797749786]
 stream = ExtResource("11_fkx11")
 volume_db = -11.0
+
+[node name="Pickups" type="Node" parent="." unique_id=978210658]
+
+[node name="ShieldsUp" type="AudioStreamPlayer2D" parent="Pickups" unique_id=282709752]
+stream = ExtResource("13_lc4q6")
