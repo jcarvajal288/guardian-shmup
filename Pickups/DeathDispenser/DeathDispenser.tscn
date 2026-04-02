@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1qu0etr88rsk"]
+
+[ext_resource type="Script" uid="uid://dyu23p2c2dyu4" path="res://Pickups/DeathDispenser/death_dispenser.gd" id="1_7vklm"]
+
+[node name="DispensePickupOnDeath" type="Node2D" unique_id=167486419]
+script = ExtResource("1_7vklm")

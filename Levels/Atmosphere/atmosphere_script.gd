@@ -5,7 +5,6 @@ const BUZZSAW: PackedScene = preload("res://Actors/Buzzsaw/Buzzsaw.tscn")
 
 
 func _ready() -> void:
-	pass
 	build_level()
 
 
@@ -59,7 +58,8 @@ func build_level() -> void:
 	spawn_eel(SPAWN_TOP_MIDDLE)
 	await Global.wait_for_sec(5.0)
 
-	spawn_big_spider(SPAWN_LEFT_HALF_TOP, Vector2(20, 20), Vector2(140, 20))
+	var spider = spawn_big_spider(SPAWN_LEFT_HALF_TOP, Vector2(20, 20), Vector2(140, 20))
+	Pickups.add_shield_pickup(spider)
 	await Global.wait_for_sec(2.0)
 
 	two_column_spiders.call(SPAWN_TOP_LEFT, SPAWN_TOP_LEFT_CORNER, Vector2(1, 1))

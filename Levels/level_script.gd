@@ -65,7 +65,7 @@ func spawn_eel(spawn: Vector2) -> void:
 	get_parent().add_child.call_deferred(eel)
 
 
-func spawn_big_spider(spawn: Vector2, pointA: Vector2, pointB: Vector2) -> void:
+func spawn_big_spider(spawn: Vector2, pointA: Vector2, pointB: Vector2) -> Enemy:
 	var spider = BIG_SPIDER.instantiate()
 	spider.global_position = spawn
 
@@ -76,4 +76,5 @@ func spawn_big_spider(spawn: Vector2, pointA: Vector2, pointB: Vector2) -> void:
 	move_pattern.pointB = pointB
 	spider.add_child(move_pattern)
 	get_parent().add_child.call_deferred(spider)
+	return spider
 

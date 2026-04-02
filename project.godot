@@ -28,6 +28,7 @@ Sounds="*res://Assets/Sounds/sounds.gd"
 Bullets="*res://Bullets/bullets.gd"
 MovementPatterns="*uid://cqejklw6m7o85"
 GameStats="*uid://cnufoqky42pnb"
+Pickups="*uid://doptp2fcnwgcc"
 
 [display]
 
