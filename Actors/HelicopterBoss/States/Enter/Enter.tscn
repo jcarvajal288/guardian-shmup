@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnktxjyrddxd8"]
+
+[ext_resource type="Script" uid="uid://crlg1bf48m73e" path="res://Actors/HelicopterBoss/States/Enter/enter.gd" id="1_5xple"]
+
+[node name="Enter" type="Node" unique_id=491198326]
+script = ExtResource("1_5xple")
+metadata/_custom_type_script = "uid://d1arbkfu84rlq"

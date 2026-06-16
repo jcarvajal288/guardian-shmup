@@ -1,0 +1,4 @@
++ Helicopter Boss
+    x make placeholder art
+    x spawn 3 bosses at top of screen and slide them in
+    _ states for various positions

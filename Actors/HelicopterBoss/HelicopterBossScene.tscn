@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://csqh85y1mc8na"]
+
+[ext_resource type="Script" uid="uid://d1lmhqkpcgst7" path="res://Actors/HelicopterBoss/helicopter_boss_scene.gd" id="1_qj4si"]
+[ext_resource type="PackedScene" uid="uid://ch5fn3c6x65u8" path="res://Actors/HelicopterBoss/HelicopterBoss.tscn" id="2_rn2jw"]
+[ext_resource type="Script" uid="uid://bylxnrv7ocxee" path="res://Actors/HelicopterBoss/helicopter_state_machine.gd" id="3_op4de"]
+[ext_resource type="PackedScene" uid="uid://dnktxjyrddxd8" path="res://Actors/HelicopterBoss/States/Enter/Enter.tscn" id="4_rn2jw"]
+
+[node name="HelicopterBossScene" type="Node2D" unique_id=4254162]
+script = ExtResource("1_qj4si")
+
+[node name="HelicopterBossA" parent="." unique_id=802092202 instance=ExtResource("2_rn2jw")]
+position = Vector2(16, -16)
+
+[node name="HelicopterBossB" parent="." unique_id=483704646 instance=ExtResource("2_rn2jw")]
+position = Vector2(80, -16)
+
+[node name="HelicopterBossC" parent="." unique_id=1369020998 instance=ExtResource("2_rn2jw")]
+position = Vector2(144, -16)
+
+[node name="StateMachine" type="Node" parent="." unique_id=1284209613 node_paths=PackedStringArray("subjectA", "subjectB", "subjectC", "starting_state")]
+script = ExtResource("3_op4de")
+subjectA = NodePath("../HelicopterBossA")
+subjectB = NodePath("../HelicopterBossB")
+subjectC = NodePath("../HelicopterBossC")
+starting_state = NodePath("Enter")
+
+[node name="Enter" parent="StateMachine" unique_id=491198326 instance=ExtResource("4_rn2jw")]

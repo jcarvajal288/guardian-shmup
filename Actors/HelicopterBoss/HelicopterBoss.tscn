@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ch5fn3c6x65u8"]
+
+[ext_resource type="Texture2D" uid="uid://ql6jafba0idd" path="res://Actors/HelicopterBoss/_art/placeholder.png" id="1_a378v"]
+[ext_resource type="Script" uid="uid://b5ymi34ri4rnx" path="res://Actors/HelicopterBoss/helicopter_boss.gd" id="1_l1erc"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="2_l1erc"]
+[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="3_dxe2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a378v"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e5in3"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgww8"]
+radius = 15.0
+
+[node name="HelicopterBoss" type="CharacterBody2D" unique_id=587916241]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_l1erc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1625174926]
+texture = ExtResource("1_a378v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194782755]
+shape = SubResource("CircleShape2D_a378v")
+
+[node name="Hurtbox" parent="." unique_id=867860352 instance=ExtResource("2_l1erc")]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=719271502]
+shape = SubResource("CircleShape2D_e5in3")
+
+[node name="Hitbox" parent="." unique_id=1410778573 instance=ExtResource("3_dxe2m")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1798230965]
+shape = SubResource("CircleShape2D_dgww8")
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]

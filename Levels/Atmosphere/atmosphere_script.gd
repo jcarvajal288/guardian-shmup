@@ -2,10 +2,12 @@ extends LevelScript
 
 const BEETLE: PackedScene = preload("res://Actors/Beetle/Beetle.tscn")
 const BUZZSAW: PackedScene = preload("res://Actors/Buzzsaw/Buzzsaw.tscn")
+const BOSS: PackedScene = preload("res://Actors/HelicopterBoss/HelicopterBossScene.tscn")
 
 
 func _ready() -> void:
-	build_level()
+	#build_level()
+	spawn_boss()
 
 
 func spawn_beetle(starting_point: Vector2, destination: Vector2, time: float) -> void:
@@ -68,3 +70,7 @@ func build_level() -> void:
 	await Global.wait_for_sec(5.0)
 
 
+func spawn_boss() -> void:
+	var boss = BOSS.instantiate()
+	boss.global_position = Vector2.ZERO
+	get_parent().add_child.call_deferred(boss)
