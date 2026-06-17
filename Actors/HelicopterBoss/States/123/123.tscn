@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnktxjyrddxd8"]
+
+[ext_resource type="Script" uid="uid://crlg1bf48m73e" path="res://Actors/HelicopterBoss/States/123/123.gd" id="1_qhgrs"]
+
+[node name="123" type="Node" unique_id=491198326]
+script = ExtResource("1_qhgrs")
+metadata/_custom_type_script = "uid://d1arbkfu84rlq"

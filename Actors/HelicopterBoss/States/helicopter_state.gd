@@ -3,14 +3,17 @@ class_name HelicopterState extends Node
 const POS_1 = Vector2(16.0, 16.0)
 const POS_2 = Vector2(80.0, 16.0)
 const POS_3 = Vector2(144.0, 16.0)
-const POS_4 = Vector2(16.0, 72.0)
-const POS_5 = Vector2(80.0, 72.0)
-const POS_6 = Vector2(144.0, 72.0)
-const POS_7 = Vector2(16.0, 128.0)
-const POS_8 = Vector2(80.0, 128.0)
-const POS_9 = Vector2(144.0, 128.0)
+const POS_4 = Vector2(16.0, 64.0)
+const POS_5 = Vector2(80.0, 64.0)
+const POS_6 = Vector2(144.0, 64.0)
+const POS_7 = Vector2(16.0, 112.0)
+const POS_8 = Vector2(80.0, 112.0)
+const POS_9 = Vector2(144.0, 112.0)
+
 
 const MOVE_TO_POINT = preload("res://Components/MovementPatterns/MoveToPoint/MoveToPoint.tscn")
+
+@export var next_states: Array[HelicopterState] = []
 
 var subjectA: CharacterBody2D
 var subjectB: CharacterBody2D
@@ -36,4 +39,29 @@ func process_physics(_delta: float) -> HelicopterState:
 
 
 func process_frame(_delta: float) -> HelicopterState:
+	var A_done = subjectA.has_stopped_moving
+	var B_done = subjectB.has_stopped_moving
+	var C_done = subjectC.has_stopped_moving
+	if A_done and B_done and C_done:
+		return next_states.pick_random()
 	return null
+
+
+func set_moves(pos_a: Vector2, pos_b: Vector2, pos_c: Vector2, time: float = 3.0) -> void:
+	var movetoA = MOVE_TO_POINT.instantiate()
+	movetoA.subject = subjectA
+	movetoA.destination = pos_a
+	movetoA.time_to_dest = time
+	subjectA.change_movement_pattern(movetoA)
+
+	var movetoB = MOVE_TO_POINT.instantiate()
+	movetoB.subject = subjectB
+	movetoB.destination = pos_b
+	movetoB.time_to_dest = time
+	subjectB.change_movement_pattern(movetoB)
+
+	var movetoC = MOVE_TO_POINT.instantiate()
+	movetoC.subject = subjectC
+	movetoC.destination = pos_c
+	movetoC.time_to_dest = time
+	subjectC.change_movement_pattern(movetoC)
