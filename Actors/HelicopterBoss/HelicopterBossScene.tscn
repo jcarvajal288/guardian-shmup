@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dnktxjyrddxd8" path="res://Actors/HelicopterBoss/States/123/123.tscn" id="4_rn2jw"]
 [ext_resource type="PackedScene" uid="uid://bgptskgm8xid2" path="res://Actors/HelicopterBoss/States/159/159.tscn" id="5_5lvbr"]
 [ext_resource type="PackedScene" uid="uid://cuncpald4805f" path="res://Actors/HelicopterBoss/States/789/789.tscn" id="5_pv4oh"]
-[ext_resource type="PackedScene" uid="uid://t74hmm0iu7wx" path="res://Actors/HelicopterBoss/States/753/753.tscn" id="6_rkkae"]
+[ext_resource type="PackedScene" uid="uid://b1ma74acy02rm" path="res://Actors/HelicopterBoss/States/147/147.tscn" id="5_yjd42"]
+[ext_resource type="PackedScene" uid="uid://dfqrg5xelrxi0" path="res://Actors/HelicopterBoss/States/258/258.tscn" id="7_udknk"]
+[ext_resource type="PackedScene" uid="uid://de1cj4kcaqjhn" path="res://Actors/HelicopterBoss/States/357/357.tscn" id="8_vgbxf"]
+[ext_resource type="PackedScene" uid="uid://dq3ck7sphbxs4" path="res://Actors/HelicopterBoss/States/369/369.tscn" id="9_4m7o4"]
+[ext_resource type="PackedScene" uid="uid://q6abcr23x1ot" path="res://Actors/HelicopterBoss/States/456/456.tscn" id="10_a22yx"]
 
 [node name="HelicopterBossScene" type="Node2D" unique_id=4254162]
 script = ExtResource("1_qj4si")
@@ -28,13 +32,25 @@ subjectC = NodePath("../HelicopterBossC")
 starting_state = NodePath("123")
 
 [node name="123" parent="StateMachine" unique_id=491198326 node_paths=PackedStringArray("next_states") instance=ExtResource("4_rn2jw")]
-next_states = [NodePath("../789"), NodePath("../753"), NodePath(".")]
+next_states = [NodePath("../159"), NodePath("../357"), NodePath("../456"), NodePath("../789")]
+
+[node name="147" parent="StateMachine" unique_id=364106880 node_paths=PackedStringArray("next_states") instance=ExtResource("5_yjd42")]
+next_states = [NodePath("../159"), NodePath("../258"), NodePath("../357"), NodePath("../369")]
 
 [node name="159" parent="StateMachine" unique_id=1154626468 node_paths=PackedStringArray("next_states") instance=ExtResource("5_5lvbr")]
-next_states = [NodePath("../123"), NodePath("../789"), NodePath("../753")]
+next_states = [NodePath("../123"), NodePath("../147"), NodePath("../258"), NodePath("../357"), NodePath("../369"), NodePath("../456"), NodePath("../789")]
+
+[node name="258" parent="StateMachine" unique_id=131172080 node_paths=PackedStringArray("next_states") instance=ExtResource("7_udknk")]
+next_states = [NodePath("../147"), NodePath("../159"), NodePath("../357"), NodePath("../369")]
+
+[node name="357" parent="StateMachine" unique_id=1122171587 node_paths=PackedStringArray("next_states") instance=ExtResource("8_vgbxf")]
+next_states = [NodePath("../123"), NodePath("../147"), NodePath("../159"), NodePath("../258"), NodePath("../369"), NodePath("../456"), NodePath("../789")]
+
+[node name="369" parent="StateMachine" unique_id=779456415 node_paths=PackedStringArray("next_states") instance=ExtResource("9_4m7o4")]
+next_states = [NodePath("../147"), NodePath("../159"), NodePath("../258"), NodePath("../357")]
+
+[node name="456" parent="StateMachine" unique_id=407237486 node_paths=PackedStringArray("next_states") instance=ExtResource("10_a22yx")]
+next_states = [NodePath("../123"), NodePath("../159"), NodePath("../357"), NodePath("../789")]
 
 [node name="789" parent="StateMachine" unique_id=1202400039 node_paths=PackedStringArray("next_states") instance=ExtResource("5_pv4oh")]
-next_states = [NodePath("../123"), NodePath("../159"), NodePath("../753")]
-
-[node name="753" parent="StateMachine" unique_id=712753939 node_paths=PackedStringArray("next_states") instance=ExtResource("6_rkkae")]
-next_states = [NodePath("../123"), NodePath("../159"), NodePath("../789")]
+next_states = [NodePath("../123"), NodePath("../159"), NodePath("../357"), NodePath("../456")]

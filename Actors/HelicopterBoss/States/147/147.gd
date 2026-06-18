@@ -2,4 +2,5 @@ extends HelicopterState
 
 
 func enter() -> void:
-	set_moves(POS_1, POS_2, POS_3)
+	set_moves(POS_1, POS_4, POS_7)
+
