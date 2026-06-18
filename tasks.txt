@@ -1,4 +1,7 @@
 + Helicopter Boss
     x make placeholder art
     x spawn 3 bosses at top of screen and slide them in
-    _ states for various positions
+    x states for all eight line positions
+    _ make sure bosses only move laterally (closest one to destination moves there)
+    _ make bosses destructable
+    _ bosses fire bullets
