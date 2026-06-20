@@ -12,17 +12,50 @@
 [ext_resource type="PackedScene" uid="uid://dq3ck7sphbxs4" path="res://Actors/HelicopterBoss/States/369/369.tscn" id="9_4m7o4"]
 [ext_resource type="PackedScene" uid="uid://q6abcr23x1ot" path="res://Actors/HelicopterBoss/States/456/456.tscn" id="10_a22yx"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_yjd42"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_udknk"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgbxf"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="HelicopterBossScene" type="Node2D" unique_id=4254162]
 script = ExtResource("1_qj4si")
 
 [node name="HelicopterBossA" parent="." unique_id=802092202 instance=ExtResource("2_rn2jw")]
 position = Vector2(16, -16)
 
+[node name="Label" type="Label" parent="HelicopterBossA" unique_id=1432880423]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = 11.0
+text = "A"
+label_settings = SubResource("LabelSettings_yjd42")
+
 [node name="HelicopterBossB" parent="." unique_id=483704646 instance=ExtResource("2_rn2jw")]
 position = Vector2(80, -16)
 
+[node name="Label" type="Label" parent="HelicopterBossB" unique_id=600910396]
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 11.0
+text = "B"
+label_settings = SubResource("LabelSettings_udknk")
+
 [node name="HelicopterBossC" parent="." unique_id=1369020998 instance=ExtResource("2_rn2jw")]
 position = Vector2(144, -16)
+
+[node name="Label" type="Label" parent="HelicopterBossC" unique_id=1284359863]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 11.0
+text = "C"
+label_settings = SubResource("LabelSettings_vgbxf")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1284209613 node_paths=PackedStringArray("subjectA", "subjectB", "subjectC", "starting_state")]
 script = ExtResource("3_op4de")

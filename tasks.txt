@@ -2,6 +2,6 @@
     x make placeholder art
     x spawn 3 bosses at top of screen and slide them in
     x states for all eight line positions
-    _ make sure bosses only move laterally (closest one to destination moves there)
+    x make sure bosses only move laterally 
     _ make bosses destructable
     _ bosses fire bullets

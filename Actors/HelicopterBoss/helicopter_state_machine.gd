@@ -14,7 +14,6 @@ func init() -> void:
 		child.subjectA = subjectA
 		child.subjectB = subjectB
 		child.subjectC = subjectC
-		child.signal_state_change = signal_state_change
 	change_state(starting_state)
 	signal_state_change.connect(change_state)
 

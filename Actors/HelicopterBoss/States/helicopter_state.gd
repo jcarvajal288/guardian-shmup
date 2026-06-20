@@ -19,9 +19,6 @@ var subjectA: CharacterBody2D
 var subjectB: CharacterBody2D
 var subjectC: CharacterBody2D
 
-var signal_state_change
-
-
 func enter() -> void:
 	pass
 
@@ -65,3 +62,23 @@ func set_moves(pos_a: Vector2, pos_b: Vector2, pos_c: Vector2, time: float = 3.0
 	movetoC.destination = pos_c
 	movetoC.time_to_dest = time
 	subjectC.change_movement_pattern(movetoC)
+
+
+func is_vertical_pattern() -> bool:
+	var x_diff = abs(subjectC.global_position.x - subjectA.global_position.x)
+	var y_diff = abs(subjectC.global_position.y - subjectA.global_position.y)
+	return x_diff < y_diff
+
+
+func is_horizontal_pattern() -> bool:
+	var x_diff = abs(subjectC.global_position.x - subjectA.global_position.x)
+	var y_diff = abs(subjectC.global_position.y - subjectA.global_position.y)
+	return y_diff < x_diff
+
+
+func is_a_left_of_c() -> bool:
+	return subjectA.global_position.x < subjectC.global_position.x
+
+
+func is_a_above_c() -> bool:
+	return subjectA.global_position.y < subjectC.global_position.y
