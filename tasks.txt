@@ -3,5 +3,5 @@
     x spawn 3 bosses at top of screen and slide them in
     x states for all eight line positions
     x make sure bosses only move laterally 
-    _ make bosses destructable
+    x make bosses destructable
     _ bosses fire bullets
