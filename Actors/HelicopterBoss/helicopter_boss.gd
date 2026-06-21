@@ -5,6 +5,11 @@ var movement_pattern: Node = null
 var has_stopped_moving: bool = false
 
 
+func _ready() -> void:
+	$Hurtbox.on_hit.connect($Health.take_damage)
+	$Health.on_death.connect(_on_death)
+
+
 func change_movement_pattern(new_pattern: Node) -> void:
 	if movement_pattern != null:
 		movement_pattern.queue_free()
@@ -17,3 +22,12 @@ func change_movement_pattern(new_pattern: Node) -> void:
 
 func _on_stopped_moving() -> void:
 	has_stopped_moving = true
+
+
+func _on_death() -> void:
+	$Sprite2D.visible = false
+	$CollisionShape2D.disabled = true
+	$Hurtbox.monitoring = false
+	$Hurtbox.monitorable = false
+	$Hitbox.monitoring = false
+	$Hitbox.monitorable = false
