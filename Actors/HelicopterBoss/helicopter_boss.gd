@@ -26,8 +26,7 @@ func _on_stopped_moving() -> void:
 
 func _on_death() -> void:
 	$Sprite2D.visible = false
-	$CollisionShape2D.disabled = true
-	$Hurtbox.monitoring = false
-	$Hurtbox.monitorable = false
-	$Hitbox.monitoring = false
-	$Hitbox.monitorable = false
+	$Hurtbox.set_deferred("monitoring", false)
+	$Hurtbox.set_deferred("monitorable", false)
+	$Hitbox.set_deferred("monitoring", false)
+	$Hitbox.set_deferred("monitorable", false)
