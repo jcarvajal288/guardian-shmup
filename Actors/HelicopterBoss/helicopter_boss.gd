@@ -36,6 +36,10 @@ func _on_death() -> void:
 	$Hitbox.set_deferred("monitorable", false)
 
 
+func is_alive() -> bool:
+	return $Sprite2D.visible
+
+
 func fire() -> void:
 	if bullet_pattern:
 		bullet_pattern.queue_free()

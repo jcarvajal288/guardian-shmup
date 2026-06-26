@@ -39,7 +39,7 @@ shape = SubResource("CircleShape2D_dgww8")
 
 [node name="Health" type="Node" parent="." unique_id=1862718221]
 script = ExtResource("5_dxe2m")
-max_health = 5.0
+max_health = 20.0
 metadata/_custom_type_script = "uid://catakkqdo3ot3"
 
 [editable path="Hurtbox"]
