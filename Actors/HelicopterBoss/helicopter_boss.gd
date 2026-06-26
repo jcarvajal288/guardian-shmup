@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
 var movement_pattern: Node = null
+var bullet_pattern: Node = null
 
 var has_stopped_moving: bool = false
+
+signal fire_pattern
 
 
 func _ready() -> void:
 	$Hurtbox.on_hit.connect($Health.take_damage)
 	$Health.on_death.connect(_on_death)
+	fire_pattern.connect(fire)
 
 
 func change_movement_pattern(new_pattern: Node) -> void:
@@ -30,3 +34,16 @@ func _on_death() -> void:
 	$Hurtbox.set_deferred("monitorable", false)
 	$Hitbox.set_deferred("monitoring", false)
 	$Hitbox.set_deferred("monitorable", false)
+
+
+func fire() -> void:
+	if bullet_pattern:
+		bullet_pattern.queue_free()
+	var pattern = BulletPatterns.FIRE_LINE.instantiate()
+	pattern.bullet_type = Bullets.BALL_BULLET
+	pattern.speed = 100
+	pattern.startup_time = 0.01
+	pattern.repeat_time = 0.05
+	pattern.num_bullets = 5	
+	add_child(pattern)
+	bullet_pattern = pattern

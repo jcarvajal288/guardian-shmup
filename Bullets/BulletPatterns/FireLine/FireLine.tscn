@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://chy5lw28e2qho"]
+
+[ext_resource type="Script" uid="uid://u6wuri4vfpaf" path="res://Bullets/BulletPatterns/FireLine/fire_line.gd" id="1_0wgg1"]
+
+[node name="FireLine" type="Node2D" unique_id=1368282824]
+script = ExtResource("1_0wgg1")
+
+[node name="StartupTimer" type="Timer" parent="." unique_id=310849039]
+one_shot = true
+
+[node name="RepeatTimer" type="Timer" parent="." unique_id=1618244314]
+one_shot = true

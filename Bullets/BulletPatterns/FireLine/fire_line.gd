@@ -9,6 +9,8 @@ extends Node2D
 
 @export var damage = 1.0
 
+var target_direction: Vector2
+
 
 func _ready() -> void:
 	$StartupTimer.timeout.connect(begin)
@@ -17,12 +19,14 @@ func _ready() -> void:
 
 
 func begin() -> void:
+	if direction == Global.TOWARDS_PLAYER:
+		target_direction = global_position.direction_to(Global.player.global_position)
 	fire()
 
 
 func fire() -> void:
 	var bullet = bullet_type.instantiate()
-	bullet.direction = direction
+	bullet.direction = target_direction
 	bullet.speed = speed
 	bullet.global_position = global_position
 	bullet.damage = damage
@@ -31,4 +35,3 @@ func fire() -> void:
 	if num_bullets > 0:
 		num_bullets -= 1
 		$RepeatTimer.start(repeat_time)
-
