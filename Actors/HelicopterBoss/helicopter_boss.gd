@@ -29,7 +29,7 @@ func _on_stopped_moving() -> void:
 
 
 func _on_death() -> void:
-	$Sprite2D.visible = false
+	$AnimatedSprite2D.visible = false
 	$Hurtbox.set_deferred("monitoring", false)
 	$Hurtbox.set_deferred("monitorable", false)
 	$Hitbox.set_deferred("monitoring", false)
@@ -43,7 +43,7 @@ func _on_death() -> void:
 
 
 func is_alive() -> bool:
-	return $Sprite2D.visible
+	return $AnimatedSprite2D.visible
 
 
 func fire() -> void:
