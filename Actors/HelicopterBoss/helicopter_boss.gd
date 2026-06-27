@@ -35,6 +35,12 @@ func _on_death() -> void:
 	$Hitbox.set_deferred("monitoring", false)
 	$Hitbox.set_deferred("monitorable", false)
 
+	var vfx = Effects.EXPLOSION_32x32.instantiate()
+	vfx.global_position = global_position
+	Global.add_node_to_level.emit(vfx)
+	var sfx = Sounds.SoundEffect.LOW_EXPLOSION
+	Sounds.play_sound.emit(sfx, global_position)
+
 
 func is_alive() -> bool:
 	return $Sprite2D.visible
