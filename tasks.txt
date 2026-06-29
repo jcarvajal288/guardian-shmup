@@ -4,4 +4,13 @@
     x states for all eight line positions
     x make sure bosses only move laterally 
     x make bosses destructable
+    x make movement snappier
+    _ delay before switching states
     _ bosses fire bullets
+    + replace placeholder art
+        x make helicopter blade base
+        _ make upper art
+    _ boss telegraphs movements
+_ transition to level 1 after level 2
+_ begin level 3
+    _ make parallax terrain

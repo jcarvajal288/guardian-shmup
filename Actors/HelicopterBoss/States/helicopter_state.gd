@@ -55,18 +55,21 @@ func set_moves(pos_a: Vector2, pos_b: Vector2, pos_c: Vector2, time: float = 3.0
 	movetoA.subject = subjectA
 	movetoA.destination = pos_a
 	movetoA.time_to_dest = time
+	movetoA.should_decelerate = false
 	subjectA.change_movement_pattern(movetoA)
 
 	var movetoB = MOVE_TO_POINT.instantiate()
 	movetoB.subject = subjectB
 	movetoB.destination = pos_b
 	movetoB.time_to_dest = time
+	movetoB.should_decelerate = false
 	subjectB.change_movement_pattern(movetoB)
 
 	var movetoC = MOVE_TO_POINT.instantiate()
 	movetoC.subject = subjectC
 	movetoC.destination = pos_c
 	movetoC.time_to_dest = time
+	movetoC.should_decelerate = false
 	subjectC.change_movement_pattern(movetoC)
 
 
