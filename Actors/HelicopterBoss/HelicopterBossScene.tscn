@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://de1cj4kcaqjhn" path="res://Actors/HelicopterBoss/States/357/357.tscn" id="8_vgbxf"]
 [ext_resource type="PackedScene" uid="uid://dq3ck7sphbxs4" path="res://Actors/HelicopterBoss/States/369/369.tscn" id="9_4m7o4"]
 [ext_resource type="PackedScene" uid="uid://q6abcr23x1ot" path="res://Actors/HelicopterBoss/States/456/456.tscn" id="10_a22yx"]
+[ext_resource type="PackedScene" uid="uid://bjmhvgidkaey8" path="res://Actors/HelicopterBoss/States/Pause/Pause.tscn" id="12_udknk"]
 
 [node name="HelicopterBossScene" type="Node2D" unique_id=4254162]
 script = ExtResource("1_qj4si")
@@ -24,12 +25,13 @@ position = Vector2(80, -16)
 [node name="HelicopterBossC" parent="." unique_id=1369020998 instance=ExtResource("2_rn2jw")]
 position = Vector2(144, -16)
 
-[node name="StateMachine" type="Node" parent="." unique_id=1284209613 node_paths=PackedStringArray("subjectA", "subjectB", "subjectC", "starting_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1284209613 node_paths=PackedStringArray("subjectA", "subjectB", "subjectC", "starting_state", "pause_state")]
 script = ExtResource("3_op4de")
 subjectA = NodePath("../HelicopterBossA")
 subjectB = NodePath("../HelicopterBossB")
 subjectC = NodePath("../HelicopterBossC")
 starting_state = NodePath("123")
+pause_state = NodePath("Pause")
 
 [node name="123" parent="StateMachine" unique_id=491198326 node_paths=PackedStringArray("next_states") instance=ExtResource("4_rn2jw")]
 next_states = [NodePath("../159"), NodePath("../357"), NodePath("../456"), NodePath("../789")]
@@ -54,3 +56,5 @@ next_states = [NodePath("../123"), NodePath("../159"), NodePath("../357"), NodeP
 
 [node name="789" parent="StateMachine" unique_id=1202400039 node_paths=PackedStringArray("next_states") instance=ExtResource("5_pv4oh")]
 next_states = [NodePath("../123"), NodePath("../159"), NodePath("../357"), NodePath("../456")]
+
+[node name="Pause" parent="StateMachine" unique_id=1515766427 instance=ExtResource("12_udknk")]

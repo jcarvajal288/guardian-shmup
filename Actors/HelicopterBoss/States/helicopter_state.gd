@@ -10,12 +10,10 @@ const POS_7 = Vector2(16.0, 112.0)
 const POS_8 = Vector2(80.0, 112.0)
 const POS_9 = Vector2(144.0, 112.0)
 
-const PAUSE_STATE = preload("res://Actors/HelicopterBoss/States/Pause/Pause.tscn")
-
-
 const MOVE_TO_POINT = preload("res://Components/MovementPatterns/MoveToPoint/MoveToPoint.tscn")
 
 @export var next_states: Array[HelicopterState] = []
+var pause_state: HelicopterState
 
 var subjectA: CharacterBody2D
 var subjectB: CharacterBody2D
@@ -48,7 +46,6 @@ func process_frame(_delta: float) -> HelicopterState:
 			subjectB.fire_pattern.emit()
 		if subjectC.is_alive():
 			subjectC.fire_pattern.emit()
-		var pause_state = PAUSE_STATE.instantiate()
 		pause_state.next_states = next_states
 		return pause_state
 	return null
@@ -58,7 +55,7 @@ func transition_into() -> void:
 	pass
 
 
-func set_moves(pos_a: Vector2, pos_b: Vector2, pos_c: Vector2, time: float = 3.0) -> void:
+func set_moves(pos_a: Vector2, pos_b: Vector2, pos_c: Vector2, time: float = 1.5) -> void:
 	var movetoA = MOVE_TO_POINT.instantiate()
 	movetoA.subject = subjectA
 	movetoA.destination = pos_a

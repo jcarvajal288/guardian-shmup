@@ -4,6 +4,7 @@ extends Node
 @export var subjectB: CharacterBody2D
 @export var subjectC: CharacterBody2D
 @export var starting_state: HelicopterState
+@export var pause_state: HelicopterState
 
 var current_state: HelicopterState
 
@@ -14,6 +15,7 @@ func init() -> void:
 		child.subjectA = subjectA
 		child.subjectB = subjectB
 		child.subjectC = subjectC
+		child.pause_state = pause_state
 	change_state(starting_state)
 	signal_state_change.connect(change_state)
 

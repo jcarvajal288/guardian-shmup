@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bjmhvgidkaey8"]
 
-[ext_resource type="Script" uid="uid://d1arbkfu84rlq" path="res://Actors/HelicopterBoss/States/helicopter_state.gd" id="1_koqjh"]
+[ext_resource type="Script" uid="uid://cutqhike5ay85" path="res://Actors/HelicopterBoss/States/Pause/pause.gd" id="1_koqjh"]
 
 [node name="Pause" type="Node" unique_id=1515766427]
 script = ExtResource("1_koqjh")
 metadata/_custom_type_script = "uid://d1arbkfu84rlq"
+
+[node name="Timer" type="Timer" parent="." unique_id=1411580835]
+one_shot = true
