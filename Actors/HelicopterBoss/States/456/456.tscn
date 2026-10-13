@@ -5,3 +5,5 @@
 [node name="456" type="Node" unique_id=407237486]
 script = ExtResource("1_8jd53")
 metadata/_custom_type_script = "uid://d1arbkfu84rlq"
+
+[node name="ShotTimer" type="Timer" parent="." unique_id=1473771899]

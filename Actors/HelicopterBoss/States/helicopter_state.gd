@@ -19,12 +19,14 @@ var subjectA: CharacterBody2D
 var subjectB: CharacterBody2D
 var subjectC: CharacterBody2D
 
+
 func enter() -> void:
-	pass
+	$ShotTimer.wait_time = 0.5
+	$ShotTimer.start()
 
 
 func exit() -> void:
-	pass
+	$ShotTimer.stop()
 
 
 func process_input(_event: InputEvent) -> HelicopterState:
@@ -41,11 +43,11 @@ func process_frame(_delta: float) -> HelicopterState:
 	var C_done = subjectC.has_stopped_moving
 	if A_done and B_done and C_done:
 		if subjectA.is_alive():
-			subjectA.fire_pattern.emit()
+			subjectA.fire_line_pattern.emit()
 		if subjectB.is_alive():
-			subjectB.fire_pattern.emit()
+			subjectB.fire_line_pattern.emit()
 		if subjectC.is_alive():
-			subjectC.fire_pattern.emit()
+			subjectC.fire_line_pattern.emit()
 		pause_state.next_states = next_states
 		return pause_state
 	return null

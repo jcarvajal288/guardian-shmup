@@ -5,13 +5,13 @@ var bullet_pattern: Node = null
 
 var has_stopped_moving: bool = false
 
-signal fire_pattern
+signal fire_line_pattern
 
 
 func _ready() -> void:
 	$Hurtbox.on_hit.connect($Health.take_damage)
 	$Health.on_death.connect(_on_death)
-	fire_pattern.connect(fire)
+	fire_line_pattern.connect(fire_line)
 
 
 func change_movement_pattern(new_pattern: Node) -> void:
@@ -46,7 +46,7 @@ func is_alive() -> bool:
 	return $AnimatedSprite2D.visible
 
 
-func fire() -> void:
+func fire_line() -> void:
 	if bullet_pattern:
 		bullet_pattern.queue_free()
 	var pattern = BulletPatterns.FIRE_LINE.instantiate()
