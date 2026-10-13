@@ -21,7 +21,8 @@ var subjectC: CharacterBody2D
 
 
 func enter() -> void:
-	$ShotTimer.wait_time = 0.5
+	$ShotTimer.timeout.connect(shot_timer_timeout)
+	$ShotTimer.wait_time = 1.0
 	$ShotTimer.start()
 
 
@@ -98,3 +99,12 @@ func is_a_left_of_c() -> bool:
 
 func is_a_above_c() -> bool:
 	return subjectA.global_position.y < subjectC.global_position.y
+
+
+func shot_timer_timeout() -> void:
+	if subjectA.is_alive():
+		subjectA.fire_burst_pattern.emit()
+	if subjectB.is_alive():
+		subjectB.fire_burst_pattern.emit()
+	if subjectC.is_alive():
+		subjectC.fire_burst_pattern.emit()

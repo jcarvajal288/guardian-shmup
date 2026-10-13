@@ -6,12 +6,14 @@ var bullet_pattern: Node = null
 var has_stopped_moving: bool = false
 
 signal fire_line_pattern
+signal fire_burst_pattern
 
 
 func _ready() -> void:
 	$Hurtbox.on_hit.connect($Health.take_damage)
 	$Health.on_death.connect(_on_death)
 	fire_line_pattern.connect(fire_line)
+	fire_burst_pattern.connect(fire_burst)
 
 
 func change_movement_pattern(new_pattern: Node) -> void:
@@ -47,13 +49,29 @@ func is_alive() -> bool:
 
 
 func fire_line() -> void:
+	pass
+	# if bullet_pattern:
+	# 	bullet_pattern.queue_free()
+	# var pattern = BulletPatterns.FIRE_LINE.instantiate()
+	# pattern.bullet_type = Bullets.BALL_BULLET
+	# pattern.speed = 100
+	# pattern.startup_time = 0.01
+	# pattern.repeat_time = 0.05
+	# pattern.num_bullets = 5	
+	# add_child(pattern)
+	# bullet_pattern = pattern
+
+
+func fire_burst() -> void:
 	if bullet_pattern:
 		bullet_pattern.queue_free()
-	var pattern = BulletPatterns.FIRE_LINE.instantiate()
+	var pattern = BulletPatterns.FIRE_ARC.instantiate()
 	pattern.bullet_type = Bullets.BALL_BULLET
-	pattern.speed = 100
+	pattern.direction = Global.TOWARDS_PLAYER
+	pattern.speed = 60
 	pattern.startup_time = 0.01
-	pattern.repeat_time = 0.05
-	pattern.num_bullets = 5	
+	pattern.repeat_time = 99.9
+	pattern.arc = 360
+	pattern.bullets_in_arc = 8	
 	add_child(pattern)
 	bullet_pattern = pattern
