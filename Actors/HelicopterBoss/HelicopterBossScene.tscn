@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dq3ck7sphbxs4" path="res://Actors/HelicopterBoss/States/369/369.tscn" id="9_4m7o4"]
 [ext_resource type="PackedScene" uid="uid://q6abcr23x1ot" path="res://Actors/HelicopterBoss/States/456/456.tscn" id="10_a22yx"]
 [ext_resource type="PackedScene" uid="uid://bjmhvgidkaey8" path="res://Actors/HelicopterBoss/States/Pause/Pause.tscn" id="12_udknk"]
+[ext_resource type="PackedScene" uid="uid://bnvvmbrh6b5ol" path="res://Actors/HelicopterBoss/States/Phase2/Phase2.tscn" id="13_vgbxf"]
 
 [node name="HelicopterBossScene" type="Node2D" unique_id=4254162]
 script = ExtResource("1_qj4si")
@@ -58,3 +59,5 @@ next_states = [NodePath("../123"), NodePath("../159"), NodePath("../357"), NodeP
 next_states = [NodePath("../123"), NodePath("../159"), NodePath("../357"), NodePath("../456")]
 
 [node name="Pause" parent="StateMachine" unique_id=1515766427 instance=ExtResource("12_udknk")]
+
+[node name="Phase2" parent="StateMachine" unique_id=1923211319 instance=ExtResource("13_vgbxf")]

@@ -15,4 +15,5 @@ func _check_for_phase_two() -> void:
 	]
 	if bosses_alive.count(true) == 1:
 		print("phase 2")
+		$StateMachine.change_state($StateMachine/Phase2)
 

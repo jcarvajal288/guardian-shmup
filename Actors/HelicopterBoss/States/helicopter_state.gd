@@ -21,7 +21,8 @@ var subjectC: CharacterBody2D
 
 
 func enter() -> void:
-	$ShotTimer.timeout.connect(shot_timer_timeout)
+	if not $ShotTimer.timeout.is_connected(shot_timer_timeout):
+		$ShotTimer.timeout.connect(shot_timer_timeout)
 	$ShotTimer.wait_time = 1.0
 	$ShotTimer.start()
 

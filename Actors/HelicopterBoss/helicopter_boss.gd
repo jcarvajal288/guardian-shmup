@@ -14,7 +14,7 @@ func _ready() -> void:
 	$Hurtbox.on_hit.connect($Health.take_damage)
 	$Health.on_death.connect(_on_death)
 	#fire_line_pattern.connect(fire_line)
-	fire_burst_pattern.connect(fire_burst)
+	#fire_burst_pattern.connect(fire_burst)
 
 
 func change_movement_pattern(new_pattern: Node) -> void:
