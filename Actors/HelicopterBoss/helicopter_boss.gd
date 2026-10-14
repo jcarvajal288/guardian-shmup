@@ -5,6 +5,7 @@ var bullet_pattern: Node = null
 
 var has_stopped_moving: bool = false
 
+signal check_for_phase_two
 signal fire_line_pattern
 signal fire_burst_pattern
 
@@ -12,7 +13,7 @@ signal fire_burst_pattern
 func _ready() -> void:
 	$Hurtbox.on_hit.connect($Health.take_damage)
 	$Health.on_death.connect(_on_death)
-	fire_line_pattern.connect(fire_line)
+	#fire_line_pattern.connect(fire_line)
 	fire_burst_pattern.connect(fire_burst)
 
 
@@ -42,6 +43,7 @@ func _on_death() -> void:
 	Global.add_node_to_level.emit(vfx)
 	var sfx = Sounds.SoundEffect.LOW_EXPLOSION
 	Sounds.play_sound.emit(sfx, global_position)
+	check_for_phase_two.emit()
 
 
 func is_alive() -> bool:
@@ -49,17 +51,20 @@ func is_alive() -> bool:
 
 
 func fire_line() -> void:
-	pass
-	# if bullet_pattern:
-	# 	bullet_pattern.queue_free()
-	# var pattern = BulletPatterns.FIRE_LINE.instantiate()
-	# pattern.bullet_type = Bullets.BALL_BULLET
-	# pattern.speed = 100
-	# pattern.startup_time = 0.01
-	# pattern.repeat_time = 0.05
-	# pattern.num_bullets = 5	
-	# add_child(pattern)
-	# bullet_pattern = pattern
+	if bullet_pattern:
+		bullet_pattern.queue_free()
+	var pattern = BulletPatterns.FIRE_LINE.instantiate()
+	pattern.bullet_type = Bullets.BALL_BULLET
+	pattern.speed = 100
+	pattern.startup_time = 0.01
+	pattern.repeat_time = 0.05
+	pattern.num_bullets = 5	
+	add_child(pattern)
+	bullet_pattern = pattern
+
+
+# TODO: once only one helicopter is left, it should move erattically among the top 6 positions
+# make a new movement pattern outside of the random list that does this
 
 
 func fire_burst() -> void:
