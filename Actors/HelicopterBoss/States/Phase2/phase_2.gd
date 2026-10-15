@@ -13,6 +13,9 @@ func enter() -> void:
 		boss = subjectB
 	else:
 		boss = subjectC
+	if not $ShotTimer.timeout.is_connected(fire):
+		$ShotTimer.timeout.connect(fire)
+	$ShotTimer.start()
 
 
 func process_frame(_delta: float) -> HelicopterState:
@@ -31,3 +34,8 @@ func get_new_position() -> Vector2:
 		return a.distance_to(boss.global_position) < b.distance_to(boss.global_position)
 	)
 	return positions.slice(1).pick_random()
+
+
+func fire() -> void:
+	if boss.is_alive():
+		boss.fire_line_pattern.emit()

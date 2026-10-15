@@ -13,8 +13,8 @@ signal fire_burst_pattern
 func _ready() -> void:
 	$Hurtbox.on_hit.connect($Health.take_damage)
 	$Health.on_death.connect(_on_death)
-	#fire_line_pattern.connect(fire_line)
-	#fire_burst_pattern.connect(fire_burst)
+	fire_line_pattern.connect(fire_line)
+	fire_burst_pattern.connect(fire_burst)
 
 
 func change_movement_pattern(new_pattern: Node) -> void:
@@ -63,20 +63,16 @@ func fire_line() -> void:
 	bullet_pattern = pattern
 
 
-# TODO: once only one helicopter is left, it should move erattically among the top 6 positions
-# make a new movement pattern outside of the random list that does this
-
-
 func fire_burst() -> void:
 	if bullet_pattern:
 		bullet_pattern.queue_free()
 	var pattern = BulletPatterns.FIRE_ARC.instantiate()
 	pattern.bullet_type = Bullets.BALL_BULLET
 	pattern.direction = Global.TOWARDS_PLAYER
-	pattern.speed = 60
+	pattern.speed = 30
 	pattern.startup_time = 0.01
 	pattern.repeat_time = 99.9
-	pattern.arc = 360
-	pattern.bullets_in_arc = 8	
+	pattern.arc = 180
+	pattern.bullets_in_arc = 3	
 	add_child(pattern)
 	bullet_pattern = pattern

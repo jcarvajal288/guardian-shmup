@@ -44,19 +44,15 @@ func process_frame(_delta: float) -> HelicopterState:
 	var B_done = subjectB.has_stopped_moving
 	var C_done = subjectC.has_stopped_moving
 	if A_done and B_done and C_done:
-		if subjectA.is_alive():
-			subjectA.fire_line_pattern.emit()
-		if subjectB.is_alive():
-			subjectB.fire_line_pattern.emit()
-		if subjectC.is_alive():
-			subjectC.fire_line_pattern.emit()
+		# if subjectA.is_alive():
+		# 	subjectA.fire_line_pattern.emit()
+		# if subjectB.is_alive():
+		# 	subjectB.fire_line_pattern.emit()
+		# if subjectC.is_alive():
+		# 	subjectC.fire_line_pattern.emit()
 		pause_state.next_states = next_states
 		return pause_state
 	return null
-
-
-func transition_into() -> void:
-	pass
 
 
 func set_moves(pos_a: Vector2, pos_b: Vector2, pos_c: Vector2, time: float = 1.5) -> void:
