@@ -34,6 +34,7 @@ func _on_stopped_moving() -> void:
 func _on_death() -> void:
 	$BladesSprite.visible = false
 	$BodySprite.visible = false
+	$Eye8x8.visible = false
 	$Hurtbox.set_deferred("monitoring", false)
 	$Hurtbox.set_deferred("monitorable", false)
 	$Hitbox.set_deferred("monitoring", false)

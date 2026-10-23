@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqkjecwiom0sd"
-path="res://.godot/imported/eye8x8.png-5600272fd883df0cccbd2cc871d0f28f.ctex"
+path="res://.godot/imported/eye8x8.png-ca7def6350d23542ae5f6608e2b0afa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Eyes/8x8/_art/eye8x8.png"
-dest_files=["res://.godot/imported/eye8x8.png-5600272fd883df0cccbd2cc871d0f28f.ctex"]
+source_file="res://Actors/Eyes/8x8/eye8x8.png"
+dest_files=["res://.godot/imported/eye8x8.png-ca7def6350d23542ae5f6608e2b0afa7.ctex"]
 
 [params]
 

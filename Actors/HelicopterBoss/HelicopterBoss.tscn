@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="2_l1erc"]
 [ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="3_dxe2m"]
 [ext_resource type="Texture2D" uid="uid://ck4notc57u1hf" path="res://Actors/HelicopterBoss/_art/body.png" id="3_e5in3"]
+[ext_resource type="PackedScene" uid="uid://ck0mmogvk60mi" path="res://Actors/Eyes/8x8/Eye8x8.tscn" id="4_dgww8"]
 [ext_resource type="Script" uid="uid://catakkqdo3ot3" path="res://Components/Health/health.gd" id="5_dxe2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5in3"]
@@ -63,7 +64,11 @@ autoplay = "default"
 frame_progress = 0.9332097
 
 [node name="BodySprite" type="Sprite2D" parent="." unique_id=1184223169]
+z_index = 1
 texture = ExtResource("3_e5in3")
+
+[node name="Eye8x8" parent="." unique_id=168116634 instance=ExtResource("4_dgww8")]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194782755]
 shape = SubResource("CircleShape2D_a378v")
