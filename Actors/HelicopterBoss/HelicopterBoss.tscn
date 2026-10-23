@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3hknguf6gfbi" path="res://Actors/HelicopterBoss/_art/blades.png" id="2_dxe2m"]
 [ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="2_l1erc"]
 [ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="3_dxe2m"]
+[ext_resource type="Texture2D" uid="uid://ck4notc57u1hf" path="res://Actors/HelicopterBoss/_art/body.png" id="3_e5in3"]
 [ext_resource type="Script" uid="uid://catakkqdo3ot3" path="res://Components/Health/health.gd" id="5_dxe2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5in3"]
@@ -56,10 +57,13 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_l1erc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=741011873]
+[node name="BladesSprite" type="AnimatedSprite2D" parent="." unique_id=741011873]
 sprite_frames = SubResource("SpriteFrames_fuhmt")
 autoplay = "default"
 frame_progress = 0.9332097
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=1184223169]
+texture = ExtResource("3_e5in3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194782755]
 shape = SubResource("CircleShape2D_a378v")
