@@ -3,7 +3,8 @@ extends Node2D
 enum Phase {
 	ENTERING,
 	FIGHTING,
-	DYING
+	DYING,
+	EXPLODING
 }
 
 var phase: Phase = Phase.ENTERING
@@ -36,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		if global_position.y < 64.0:
 			global_position.y += DYING_SPEED * delta
 		else:
+			phase = Phase.EXPLODING
 			explode()
 
 
@@ -58,4 +60,5 @@ func explode():
 	explosion.global_position.y += 8
 	Global.add_node_to_level.emit(explosion)
 	await Global.wait_for_sec(0.5)
+	Global.transition_level.emit(2, 3.0)
 	queue_free()
