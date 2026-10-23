@@ -13,5 +13,5 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is Hurtbox:
 		area.register_hit(damage)
-	on_hitbox_triggered.emit()
+		on_hitbox_triggered.emit()
 

@@ -37,7 +37,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bsf76")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 20.0
 }]
@@ -69,7 +69,7 @@ shape = SubResource("CapsuleShape2D_j7frp")
 debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
 
 [node name="Hitbox" parent="." unique_id=1705840663 instance=ExtResource("3_ukxhg")]
-collision_layer = 2
+collision_mask = 1
 
 [node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1798230965]
 position = Vector2(0, 1)
@@ -79,10 +79,8 @@ shape = SubResource("CapsuleShape2D_bsf76")
 max_health = 1.0
 
 [node name="Hurtbox" parent="." unique_id=1028427085 instance=ExtResource("5_8803o")]
-collision_layer = 2
-collision_mask = 8
 
-[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=719271502]
 shape = SubResource("CapsuleShape2D_nan6r")
 
 [editable path="Hitbox"]
