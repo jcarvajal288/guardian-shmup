@@ -10,7 +10,8 @@
         x make helicopter blade base
         x make body art
         x eye tracks player
-_ transition to level 2 after level 1
+x transition to level 2 after level 1
 _ victory screen when all levels beaten
+_ transition game_stats.gd into Resource files
 _ begin level 3
     _ make parallax terrain
