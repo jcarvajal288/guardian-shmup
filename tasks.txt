@@ -6,19 +6,11 @@
     x make bosses destructable
     x make movement snappier
     x delay before switching states
-    _ Each stage fires a different pattern
-        _ 123
-        _ 147
-        _ 159
-        _ 258
-        _ 357
-        _ 369
-        _ 456
-        _ 789
     + replace placeholder art
         x make helicopter blade base
-        _ make body art
-    _ boss telegraphs movements
-_ transition to level 1 after level 2
+        x make body art
+        x eye tracks player
+_ transition to level 2 after level 1
+_ victory screen when all levels beaten
 _ begin level 3
     _ make parallax terrain
