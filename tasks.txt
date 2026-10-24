@@ -6,12 +6,12 @@
     x make bosses destructable
     x make movement snappier
     x delay before switching states
-    + replace placeholder art
+    x replace placeholder art
         x make helicopter blade base
         x make body art
         x eye tracks player
 x transition to level 2 after level 1
-_ victory screen when all levels beaten
+x add score to game over screen
 _ transition game_stats.gd into Resource files
 _ begin level 3
     _ make parallax terrain

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var rng = RandomNumberGenerator.new()
+@onready var score = 0
 
 const INFINITE = 999999999999
 
