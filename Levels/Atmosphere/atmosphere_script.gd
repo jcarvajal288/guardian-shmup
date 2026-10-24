@@ -6,8 +6,7 @@ const BOSS: PackedScene = preload("res://Actors/HelicopterBoss/HelicopterBossSce
 
 
 func _ready() -> void:
-	#build_level()
-	spawn_boss()
+	build_level()
 
 
 func spawn_beetle(starting_point: Vector2, destination: Vector2, time: float) -> void:
@@ -68,6 +67,8 @@ func build_level() -> void:
 	await Global.wait_for_sec(3.0)
 	two_column_spiders.call(SPAWN_TOP_RIGHT, SPAWN_TOP_RIGHT_CORNER, Vector2(-1, 1))
 	await Global.wait_for_sec(5.0)
+
+	spawn_boss()
 
 
 func spawn_boss() -> void:
