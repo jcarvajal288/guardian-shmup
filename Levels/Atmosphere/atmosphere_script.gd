@@ -66,7 +66,7 @@ func build_level() -> void:
 	two_column_spiders.call(SPAWN_TOP_LEFT, SPAWN_TOP_LEFT_CORNER, Vector2(1, 1))
 	await Global.wait_for_sec(3.0)
 	two_column_spiders.call(SPAWN_TOP_RIGHT, SPAWN_TOP_RIGHT_CORNER, Vector2(-1, 1))
-	await Global.wait_for_sec(5.0)
+	await Global.wait_for_sec(15.0)
 
 	spawn_boss()
 

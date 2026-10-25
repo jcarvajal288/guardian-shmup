@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	$CanvasLayer/VBoxContainer/ScoreLabel.text = "%09d" % Global.score
+	$CanvasLayer/VBoxContainer/ScoreLabel.text = "Final Score: %09d" % Global.score
 
 
 func _process(_delta: float) -> void:

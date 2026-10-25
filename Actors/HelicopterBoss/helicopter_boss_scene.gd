@@ -15,4 +15,5 @@ func _check_for_phase_two() -> void:
 	]
 	if bosses_alive.count(true) == 1:
 		$StateMachine.change_state($StateMachine/Phase2)
-
+	elif bosses_alive.count(true) <= 0:
+		Global.transition_level.emit(3, 3.0)

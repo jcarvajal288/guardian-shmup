@@ -6,7 +6,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	$GameWindow.change_level(first_level_scene)
+	$GameWindow.change_level(second_level_scene)
 	Global.game_over.connect(_on_game_over)
 	Global.reset.connect(_on_reset)
 	Global.transition_level.connect(_transition_level) 
@@ -27,3 +27,5 @@ func _transition_level(level: int, delay: float) -> void:
 		$GameWindow.change_level(first_level_scene)
 	elif level == 2:
 		$GameWindow.change_level(second_level_scene)
+	else:
+		$GameWindow.change_level(game_over_scene)
