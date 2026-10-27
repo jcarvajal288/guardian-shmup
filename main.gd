@@ -2,11 +2,12 @@ extends Node2D
 
 @export var first_level_scene: PackedScene
 @export var second_level_scene: PackedScene
+@export var third_level_scene: PackedScene
 @export var game_over_scene: PackedScene
 
 
 func _ready() -> void:
-	$GameWindow.change_level(second_level_scene)
+	$GameWindow.change_level(third_level_scene)
 	Global.game_over.connect(_on_game_over)
 	Global.reset.connect(_on_reset)
 	Global.transition_level.connect(_transition_level) 

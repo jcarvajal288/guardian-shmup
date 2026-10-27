@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://8yytmu41ikl0"]
+
+[ext_resource type="Script" uid="uid://yhv2x6ajrbue" path="res://Levels/level.gd" id="1_nwnh3"]
+[ext_resource type="Texture2D" uid="uid://dxia0h3dnsy73" path="res://Levels/Surface/_art/trench.png" id="1_yutk2"]
+[ext_resource type="PackedScene" uid="uid://drthg1m8xc5eh" path="res://Actors/PlayerShip/PlayerShip.tscn" id="2_4tlhp"]
+[ext_resource type="PackedScene" uid="uid://deb5stmt5ecmn" path="res://Levels/LevelBoundaries/LevelBoundaries.tscn" id="3_0t3e4"]
+
+[node name="Surface" type="Node2D" unique_id=244636890]
+script = ExtResource("1_nwnh3")
+
+[node name="ScrollingTrench" type="Parallax2D" parent="." unique_id=12609637]
+repeat_size = Vector2(0, 144)
+autoscroll = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollingTrench" unique_id=436021787]
+position = Vector2(80, 128)
+texture = ExtResource("1_yutk2")
+
+[node name="PlayerShip" parent="." unique_id=1030482007 instance=ExtResource("2_4tlhp")]
+position = Vector2(80, 110)
+
+[node name="LevelBoundaries" parent="." unique_id=1141580118 instance=ExtResource("3_0t3e4")]

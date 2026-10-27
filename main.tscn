@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://v86xbkch4rpy" path="res://Levels/Atmosphere/Atmosphere.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://djhp2w3nm3qqk" path="res://UI/GameOverScreen.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dxucbx86pi6rn" path="res://Assets/Sounds/SoundManager/SoundManager.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://8yytmu41ikl0" path="res://Levels/Surface/Surface.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://cymlp6itmc4yd" path="res://UI/GameWindow/GameWindow.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=15715358]
 script = ExtResource("1_0xm2m")
 first_level_scene = ExtResource("2_lquwl")
 second_level_scene = ExtResource("3_7mycd")
+third_level_scene = ExtResource("4_272bh")
 game_over_scene = ExtResource("3_h2yge")
 
 [node name="SoundManager" parent="." unique_id=1569274633 instance=ExtResource("4_1bvp3")]

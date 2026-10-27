@@ -13,5 +13,6 @@
 x transition to level 2 after level 1
 x add score to game over screen
 _ transition game_stats.gd into Resource files
-_ begin level 3
-    _ make parallax terrain
+
++ begin level 3
+    x make parallax terrain
