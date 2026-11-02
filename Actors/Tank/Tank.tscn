@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ceaws1fecfmyp" path="res://Actors/Tank/tank.gd" id="1_cgv7i"]
 [ext_resource type="Texture2D" uid="uid://c8hfnngxuak57" path="res://Actors/Tank/_art/tank_body.png" id="1_dd0da"]
 [ext_resource type="Texture2D" uid="uid://bq11i5edvjgrx" path="res://Actors/Tank/_art/tank_turret.png" id="2_cgv7i"]
+[ext_resource type="Script" uid="uid://cymitci7l7e4h" path="res://Actors/Eyes/3x3/eye_3x3.gd" id="4_svj02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svj02"]
 atlas = ExtResource("1_dd0da")
@@ -54,6 +55,7 @@ autoplay = "move"
 [node name="TurretSprite" type="Sprite2D" parent="." unique_id=1498795083]
 texture = ExtResource("2_cgv7i")
 hframes = 8
+script = ExtResource("4_svj02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91527363]
 shape = SubResource("RectangleShape2D_fuhmt")

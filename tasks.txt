@@ -18,5 +18,5 @@ _ transition game_stats.gd into Resource files
     x make parallax terrain
     + make tank enemy
         x animate treads
-        _ point turret at player
+        x point turret at player
         _ fire bullets
