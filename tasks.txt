@@ -16,3 +16,7 @@ _ transition game_stats.gd into Resource files
 
 + begin level 3
     x make parallax terrain
+    + make tank enemy
+        x animate treads
+        _ point turret at player
+        _ fire bullets

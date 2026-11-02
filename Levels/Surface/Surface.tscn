@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxia0h3dnsy73" path="res://Levels/Surface/_art/trench.png" id="1_yutk2"]
 [ext_resource type="PackedScene" uid="uid://drthg1m8xc5eh" path="res://Actors/PlayerShip/PlayerShip.tscn" id="2_4tlhp"]
 [ext_resource type="PackedScene" uid="uid://deb5stmt5ecmn" path="res://Levels/LevelBoundaries/LevelBoundaries.tscn" id="3_0t3e4"]
+[ext_resource type="PackedScene" uid="uid://c4b16qe1bodo8" path="res://Actors/Tank/Tank.tscn" id="5_l33jm"]
 
 [node name="Surface" type="Node2D" unique_id=244636890]
 script = ExtResource("1_nwnh3")
@@ -20,3 +21,6 @@ texture = ExtResource("1_yutk2")
 position = Vector2(80, 110)
 
 [node name="LevelBoundaries" parent="." unique_id=1141580118 instance=ExtResource("3_0t3e4")]
+
+[node name="Tank" parent="." unique_id=1187705207 instance=ExtResource("5_l33jm")]
+position = Vector2(133, 19)

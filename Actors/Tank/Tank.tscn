@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c4b16qe1bodo8"]
+
+[ext_resource type="Script" uid="uid://ceaws1fecfmyp" path="res://Actors/Tank/tank.gd" id="1_cgv7i"]
+[ext_resource type="Texture2D" uid="uid://c8hfnngxuak57" path="res://Actors/Tank/_art/tank_body.png" id="1_dd0da"]
+[ext_resource type="Texture2D" uid="uid://bq11i5edvjgrx" path="res://Actors/Tank/_art/tank_turret.png" id="2_cgv7i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svj02"]
+atlas = ExtResource("1_dd0da")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rsnt"]
+atlas = ExtResource("1_dd0da")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikfgb"]
+atlas = ExtResource("1_dd0da")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iq44"]
+atlas = ExtResource("1_dd0da")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fuhmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svj02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rsnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikfgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iq44")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuhmt"]
+size = Vector2(14, 14)
+
+[node name="Tank" type="CharacterBody2D" unique_id=1187705207]
+script = ExtResource("1_cgv7i")
+
+[node name="BodyAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1440882537]
+sprite_frames = SubResource("SpriteFrames_fuhmt")
+animation = &"move"
+autoplay = "move"
+
+[node name="TurretSprite" type="Sprite2D" parent="." unique_id=1498795083]
+texture = ExtResource("2_cgv7i")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91527363]
+shape = SubResource("RectangleShape2D_fuhmt")
