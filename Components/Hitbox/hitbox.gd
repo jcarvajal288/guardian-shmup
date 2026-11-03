@@ -1,4 +1,4 @@
-extends Area2D
+class_name Hitbox extends Area2D
 
 @export var target: Global.CollisionLayer = Global.CollisionLayer.PLAYER
 @export var damage = 1.0

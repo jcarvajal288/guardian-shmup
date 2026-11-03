@@ -34,3 +34,7 @@ const BUZZSAW_SCORE = 1000
 const BEETLE_SPEED = 40
 const BEETLE_HEALTH = 2
 const BEETLE_SCORE = 500
+
+
+const TANK_HEALTH = 5
+const TANK_SCORE = 750

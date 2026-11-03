@@ -12,6 +12,7 @@ extends Enemy
 ]
 
 func _ready() -> void:
+	super()
 	velocity = Vector2(0, 0)
 	if velocity.y > 0: # 0 will need to be the scrolling speed of the background eventually
 		$BodyAnimatedSprite.play("move")
@@ -29,3 +30,11 @@ func _process(_delta: float) -> void:
 	$FireLine.direction = firing_angle_for_octant[octant][0]
 	$FireLine.global_position = firing_angle_for_octant[octant][1].global_position
 	move_and_slide()
+
+
+func _on_death() -> void:
+	handle_death(
+		Effects.EXPLOSION_16x16, 
+		Sounds.SoundEffect.SMALL_EXPLOSION_2, 
+		GameStats.TANK_SCORE
+	)

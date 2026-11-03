@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bq11i5edvjgrx" path="res://Actors/Tank/_art/tank_turret.png" id="2_cgv7i"]
 [ext_resource type="PackedScene" uid="uid://chy5lw28e2qho" path="res://Bullets/BulletPatterns/FireLine/FireLine.tscn" id="5_ikfgb"]
 [ext_resource type="PackedScene" uid="uid://bdnhmljf38fav" path="res://Bullets/Ball/BallBullet.tscn" id="6_7iq44"]
+[ext_resource type="Script" uid="uid://catakkqdo3ot3" path="res://Components/Health/health.gd" id="6_xiuh1"]
+[ext_resource type="Script" uid="uid://cgxa11usus3tc" path="res://Components/Hurtbox/hurtbox.gd" id="7_hh2qt"]
+[ext_resource type="Script" uid="uid://mmdrhyjronl5" path="res://Components/Hitbox/hitbox.gd" id="8_xiuh1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svj02"]
 atlas = ExtResource("1_dd0da")
@@ -42,10 +45,18 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuhmt"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh2qt"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ya2"]
 size = Vector2(14, 14)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuhmt"]
+radius = 7.0
+
 [node name="Tank" type="CharacterBody2D" unique_id=1187705207]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_cgv7i")
 
 [node name="BodyAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1440882537]
@@ -91,8 +102,30 @@ position = Vector2(6.005, -7)
 gizmo_extents = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91527363]
-shape = SubResource("RectangleShape2D_fuhmt")
+shape = SubResource("CircleShape2D_hh2qt")
 
 [node name="FireLine" parent="." unique_id=1368282824 instance=ExtResource("5_ikfgb")]
 bullet_type = ExtResource("6_7iq44")
 num_bullets = 3
+
+[node name="Health" type="Node" parent="." unique_id=325200020]
+script = ExtResource("6_xiuh1")
+max_health = 5.0
+metadata/_custom_type_script = "uid://catakkqdo3ot3"
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=695211646]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("7_hh2qt")
+metadata/_custom_type_script = "uid://cgxa11usus3tc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=752291445]
+shape = SubResource("RectangleShape2D_p6ya2")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1292048137]
+script = ExtResource("8_xiuh1")
+metadata/_custom_type_script = "uid://mmdrhyjronl5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=692276815]
+shape = SubResource("CircleShape2D_fuhmt")
+debug_color = Color(0.6, 0, 0, 0.41960785)
