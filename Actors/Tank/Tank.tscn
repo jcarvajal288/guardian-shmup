@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://ceaws1fecfmyp" path="res://Actors/Tank/tank.gd" id="1_cgv7i"]
 [ext_resource type="Texture2D" uid="uid://c8hfnngxuak57" path="res://Actors/Tank/_art/tank_body.png" id="1_dd0da"]
 [ext_resource type="Texture2D" uid="uid://bq11i5edvjgrx" path="res://Actors/Tank/_art/tank_turret.png" id="2_cgv7i"]
-[ext_resource type="Script" uid="uid://cymitci7l7e4h" path="res://Actors/Eyes/3x3/eye_3x3.gd" id="4_svj02"]
 [ext_resource type="PackedScene" uid="uid://chy5lw28e2qho" path="res://Bullets/BulletPatterns/FireLine/FireLine.tscn" id="5_ikfgb"]
 [ext_resource type="PackedScene" uid="uid://bdnhmljf38fav" path="res://Bullets/Ball/BallBullet.tscn" id="6_7iq44"]
 
@@ -57,7 +56,39 @@ autoplay = "move"
 [node name="TurretSprite" type="Sprite2D" parent="." unique_id=1498795083]
 texture = ExtResource("2_cgv7i")
 hframes = 8
-script = ExtResource("4_svj02")
+frame = 7
+
+[node name="FirePointRight" type="Marker2D" parent="TurretSprite" unique_id=1602801481]
+position = Vector2(8, 0)
+gizmo_extents = 1.0
+
+[node name="FirePointDownRight" type="Marker2D" parent="TurretSprite" unique_id=1451994657]
+position = Vector2(6, 6)
+gizmo_extents = 1.0
+
+[node name="FirePointDown" type="Marker2D" parent="TurretSprite" unique_id=551505603]
+position = Vector2(0, 8)
+gizmo_extents = 1.0
+
+[node name="FirePointDownLeft" type="Marker2D" parent="TurretSprite" unique_id=1827764977]
+position = Vector2(-6, 6)
+gizmo_extents = 1.0
+
+[node name="FirePointLeft" type="Marker2D" parent="TurretSprite" unique_id=75638226]
+position = Vector2(-8, 0)
+gizmo_extents = 1.0
+
+[node name="FirePointUpLeft" type="Marker2D" parent="TurretSprite" unique_id=204693525]
+position = Vector2(-6, -6)
+gizmo_extents = 1.0
+
+[node name="FirePointUp" type="Marker2D" parent="TurretSprite" unique_id=659763558]
+position = Vector2(0, -8)
+gizmo_extents = 1.0
+
+[node name="FirePointUpRight" type="Marker2D" parent="TurretSprite" unique_id=708034335]
+position = Vector2(6.005, -7)
+gizmo_extents = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91527363]
 shape = SubResource("RectangleShape2D_fuhmt")
