@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c8hfnngxuak57" path="res://Actors/Tank/_art/tank_body.png" id="1_dd0da"]
 [ext_resource type="Texture2D" uid="uid://bq11i5edvjgrx" path="res://Actors/Tank/_art/tank_turret.png" id="2_cgv7i"]
 [ext_resource type="Script" uid="uid://cymitci7l7e4h" path="res://Actors/Eyes/3x3/eye_3x3.gd" id="4_svj02"]
+[ext_resource type="PackedScene" uid="uid://chy5lw28e2qho" path="res://Bullets/BulletPatterns/FireLine/FireLine.tscn" id="5_ikfgb"]
+[ext_resource type="PackedScene" uid="uid://bdnhmljf38fav" path="res://Bullets/Ball/BallBullet.tscn" id="6_7iq44"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svj02"]
 atlas = ExtResource("1_dd0da")
@@ -59,3 +61,7 @@ script = ExtResource("4_svj02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91527363]
 shape = SubResource("RectangleShape2D_fuhmt")
+
+[node name="FireLine" parent="." unique_id=1368282824 instance=ExtResource("5_ikfgb")]
+bullet_type = ExtResource("6_7iq44")
+num_bullets = 3
