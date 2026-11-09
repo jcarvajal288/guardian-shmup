@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://b63p3hwn2i3hg"]
+
+[ext_resource type="Texture2D" uid="uid://dep0njxq5qvt8" path="res://Actors/EnergyBridge/_art/energy_bridge_generator.png" id="1_66y31"]
+[ext_resource type="Script" uid="uid://s8bp60gygos3" path="res://Actors/EnergyBridge/energy_bridge.gd" id="1_c68yd"]
+[ext_resource type="Texture2D" uid="uid://bnbkq6sv8oh6" path="res://Actors/EnergyBridge/_art/energy_bridge.png" id="2_c68yd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5i67"]
+atlas = ExtResource("1_66y31")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb5l1"]
+atlas = ExtResource("1_66y31")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si6bc"]
+atlas = ExtResource("1_66y31")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0jej"]
+atlas = ExtResource("1_66y31")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fuhmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5i67")
+}],
+"loop": 1,
+"name": &"deactivated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mb5l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si6bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0jej")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66y31"]
+atlas = ExtResource("2_c68yd")
+region = Rect2(0, 0, 128, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68yd"]
+atlas = ExtResource("2_c68yd")
+region = Rect2(0, 16, 128, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teahx"]
+atlas = ExtResource("2_c68yd")
+region = Rect2(0, 32, 128, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0quq"]
+atlas = ExtResource("2_c68yd")
+region = Rect2(0, 48, 128, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62gro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66y31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c68yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teahx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0quq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="EnergyBridge" type="CharacterBody2D" unique_id=1293240230]
+script = ExtResource("1_c68yd")
+
+[node name="RightGenerator" type="AnimatedSprite2D" parent="." unique_id=1888337677]
+z_index = 1
+position = Vector2(48, 0)
+sprite_frames = SubResource("SpriteFrames_fuhmt")
+animation = &"running"
+autoplay = "running"
+
+[node name="LeftGenerator" type="AnimatedSprite2D" parent="." unique_id=458747994]
+z_index = 1
+position = Vector2(-48, 0)
+rotation = -3.1415925
+sprite_frames = SubResource("SpriteFrames_fuhmt")
+animation = &"running"
+autoplay = "running"
+
+[node name="Energy" type="AnimatedSprite2D" parent="." unique_id=2058821596]
+sprite_frames = SubResource("SpriteFrames_62gro")
+autoplay = "default"
+frame_progress = 0.37581813
