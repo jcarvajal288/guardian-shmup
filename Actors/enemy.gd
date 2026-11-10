@@ -24,13 +24,13 @@ func _on_hit(_dmg: float) -> void:
 		var size = $CollisionShape2D.shape.radius
 		var x = Global.rng.randf_range(-size / 2, size / 2)
 		var y = Global.rng.randf_range(-size / 2, size / 2)
-		hit.global_position = global_position + Vector2(x, y)
+		hit.global_position = $CollisionShape2D.global_position + Vector2(x, y)
 		Global.add_node_to_level.emit(hit)
 
 
 func handle_death(vfx_scene: PackedScene, sfx: Sounds.SoundEffect, score: int) -> void:
 	var vfx = vfx_scene.instantiate()
-	vfx.global_position = global_position
+	vfx.global_position = $CollisionShape2D.global_position
 	Global.add_node_to_level.emit(vfx)
 	Sounds.play_sound.emit(sfx, global_position)
 	Global.add_score.emit(score)

@@ -23,4 +23,4 @@ position = Vector2(80, 110)
 [node name="LevelBoundaries" parent="." unique_id=1141580118 instance=ExtResource("3_0t3e4")]
 
 [node name="EnergyBridge" parent="." unique_id=1034829039 instance=ExtResource("6_uxwdm")]
-position = Vector2(80, 32)
+position = Vector2(80, 0)

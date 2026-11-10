@@ -3,6 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dep0njxq5qvt8" path="res://Actors/EnergyBridge/_art/energy_bridge_generator.png" id="1_66y31"]
 [ext_resource type="Script" uid="uid://s8bp60gygos3" path="res://Actors/EnergyBridge/energy_bridge.gd" id="1_c68yd"]
 [ext_resource type="Texture2D" uid="uid://bnbkq6sv8oh6" path="res://Actors/EnergyBridge/_art/energy_bridge.png" id="2_c68yd"]
+[ext_resource type="Script" uid="uid://53bv3t72ta87" path="res://Actors/EnergyBridge/generator.gd" id="2_l0jej"]
+[ext_resource type="PackedScene" uid="uid://csdc4kco3ncf5" path="res://Components/Hurtbox/Hurtbox.tscn" id="4_si6bc"]
+[ext_resource type="PackedScene" uid="uid://dqrd5e3alvuxr" path="res://Components/Health/Health.tscn" id="6_l0jej"]
+[ext_resource type="PackedScene" uid="uid://bn3mvtsoa3g3n" path="res://Components/Hitbox/Hitbox.tscn" id="7_l0jej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuhmt"]
+size = Vector2(112, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5i67"]
 atlas = ExtResource("1_66y31")
@@ -45,6 +52,24 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuhmt"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_teahx"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0jej"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p6ya2"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0quq"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8d5qm"]
+radius = 8.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_66y31"]
 atlas = ExtResource("2_c68yd")
 region = Rect2(0, 0, 128, 16)
@@ -81,17 +106,52 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si6bc"]
+size = Vector2(86, 10)
+
 [node name="EnergyBridge" type="CharacterBody2D" unique_id=1293240230]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_c68yd")
 
-[node name="RightGenerator" type="AnimatedSprite2D" parent="." unique_id=1888337677]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631039382]
+shape = SubResource("RectangleShape2D_fuhmt")
+
+[node name="RightGenerator" type="CharacterBody2D" parent="." unique_id=1979350339]
+script = ExtResource("2_l0jej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RightGenerator" unique_id=1888337677]
 z_index = 1
 position = Vector2(48, 0)
 sprite_frames = SubResource("SpriteFrames_fuhmt")
 animation = &"running"
 autoplay = "running"
 
-[node name="LeftGenerator" type="AnimatedSprite2D" parent="." unique_id=458747994]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGenerator" unique_id=780595967]
+z_index = 2
+position = Vector2(48, 0)
+shape = SubResource("CircleShape2D_fuhmt")
+
+[node name="Hurtbox" parent="RightGenerator" unique_id=867860352 instance=ExtResource("4_si6bc")]
+
+[node name="CollisionShape2D" parent="RightGenerator/Hurtbox" index="0" unique_id=719271502]
+position = Vector2(48, 0)
+shape = SubResource("CircleShape2D_teahx")
+
+[node name="Hitbox" parent="RightGenerator" unique_id=1410778573 instance=ExtResource("7_l0jej")]
+
+[node name="CollisionShape2D" parent="RightGenerator/Hitbox" index="0" unique_id=1798230965]
+z_index = 2
+position = Vector2(48, 0)
+shape = SubResource("CircleShape2D_l0jej")
+
+[node name="Health" parent="RightGenerator" unique_id=1131927414 instance=ExtResource("6_l0jej")]
+max_health = 5.0
+
+[node name="LeftGenerator" type="CharacterBody2D" parent="." unique_id=1690074016]
+script = ExtResource("2_l0jej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftGenerator" unique_id=458747994]
 z_index = 1
 position = Vector2(-48, 0)
 rotation = -3.1415925
@@ -99,7 +159,40 @@ sprite_frames = SubResource("SpriteFrames_fuhmt")
 animation = &"running"
 autoplay = "running"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGenerator" unique_id=1678442099]
+z_index = 2
+position = Vector2(-48, 0)
+shape = SubResource("CircleShape2D_p6ya2")
+
+[node name="Hurtbox" parent="LeftGenerator" unique_id=1033394136 instance=ExtResource("4_si6bc")]
+
+[node name="CollisionShape2D" parent="LeftGenerator/Hurtbox" index="0" unique_id=719271502]
+position = Vector2(-48, 0)
+shape = SubResource("CircleShape2D_b0quq")
+
+[node name="Hitbox" parent="LeftGenerator" unique_id=236688805 instance=ExtResource("7_l0jej")]
+
+[node name="CollisionShape2D" parent="LeftGenerator/Hitbox" index="0" unique_id=1798230965]
+z_index = 2
+position = Vector2(-48, 0)
+shape = SubResource("CircleShape2D_8d5qm")
+
+[node name="Health" parent="LeftGenerator" unique_id=761977220 instance=ExtResource("6_l0jej")]
+max_health = 5.0
+
 [node name="Energy" type="AnimatedSprite2D" parent="." unique_id=2058821596]
 sprite_frames = SubResource("SpriteFrames_62gro")
 autoplay = "default"
 frame_progress = 0.37581813
+
+[node name="Hitbox" parent="Energy" unique_id=295261903 instance=ExtResource("7_l0jej")]
+damage = 1.5
+
+[node name="CollisionShape2D" parent="Energy/Hitbox" index="0" unique_id=1798230965]
+shape = SubResource("RectangleShape2D_si6bc")
+
+[editable path="RightGenerator/Hurtbox"]
+[editable path="RightGenerator/Hitbox"]
+[editable path="LeftGenerator/Hurtbox"]
+[editable path="LeftGenerator/Hitbox"]
+[editable path="Energy/Hitbox"]
